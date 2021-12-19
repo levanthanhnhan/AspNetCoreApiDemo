@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 main-form">
+      <h1>{{'DepartmentEdit.Title' | translate}}</h1>
+      <div class="col-md-12">
+        <form id="addDepartment" method="post" [formGroup]="addForm" (ngSubmit)="onSubmit()">
+          <hr>
+          <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
+            <ul>
+              <li style="display:none"></li>
+            </ul>
+          </div>
+          <div class="mb-2 mb-30">
+            <p class="text-font">{{'DepartmentEdit.DepartmentName' | translate}}</p>
+            <input type="text" id="departmentName" class="form form-control" formControlName="departmentName" style="text-transform:uppercase" [ngModel]="department.name" [ngClass]="{ 'is-invalid': submitted && regisData.departmentName.errors }">
+            <div *ngIf="submitted && regisData.departmentName.errors" class="alert-danger-text">
+              <span>{{'DepartmentEdit.NameValidate' | translate}}</span>
+            </div>
+          </div>
+          <div class="mb-2 mb-30">
+            <p class="text-font">{{'DepartmentEdit.DepartmentLead' | translate}}</p>
+            <select id="leaderDepartment" class="form form-control" formControlName="leaderDepartment" [ngModel]="department.leaderStaffId">
+              <option value="0">--</option>
+              <option *ngFor="let staff of lstStaff;" value="{{staff.id}}">{{staff.lastName}} {{staff.firstName}}</option>
+            </select>
+          </div>
+          <div class="mb-2 mb-30">
+            <p class="text-font">{{'DepartmentEdit.ParentDepartment' | translate}}</p>
+            <select id="parentDepartmentId" class="form form-control" formControlName="parentDepartmentId" [ngModel]="department.parentId">
+              <option value="0">--</option>
+              <option *ngFor="let depart of lstDepartment;" value="{{depart.id}}">{{depart.name}}</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="col float-right">
+              <button type="submit" class="btn btn-primary">{{'DepartmentEdit.Save' | translate}}</button>
+              <button class="btn btn-outline-secondary ml-2" (click)="onback($event)">{{'DepartmentEdit.BtnCancel' | translate}}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

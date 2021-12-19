@@ -1,0 +1,14 @@
+<!-- Modal -->
+<div class="modal-content">
+  <div class="modal-header header-content">
+    <span class="material-icons icon-image-preview fixed">check_circle_outline</span>
+    <h4 class="modal-title" id="exampleModalLabel">{{modalTitle}} </h4>
+  </div>
+  <div class="modal-body">
+    <p> {{modalContent}}</p>
+    <p *ngIf="optionModalContent" style="color: yellowgreen; font-weight:bold">{{optionModalContent}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="reLoad()">{{buttonTitle}}</button>
+  </div>
+</div>

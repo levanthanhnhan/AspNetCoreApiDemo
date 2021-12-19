@@ -1,0 +1,65 @@
+<div *ngIf="staff" class="row shadow">
+  <div class="col-12" id="rightContainer">
+    <div class="row shadow pd-10">
+
+      <!-- TABLE USER INFORMATION -->
+      <table class="table table-bordered" [hidden]="!isShowInfomation" id="tableInfomation">
+        <thead class="thead-light">
+          <tr>
+            <th colspan="2">
+              {{'StaffInformation.Title' | translate}}
+              <span class="material-icons float-right mr-3" [hidden]="!displayControl" (click)="editProfile(staff.id)" style="cursor: pointer">
+                edit
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="width: 30%;">{{'StaffInformation.FullName' | translate}}</td>
+            <td>{{staff.lastName}} {{staff.firstName}}</td>
+          </tr>
+          <tr>
+            <td>{{'StaffInformation.Sex' | translate}}</td>
+            <ng-template *ngIf="staff.sex == 1;then showBlock; else notShowBlock">
+            </ng-template>
+            <ng-template #showBlock>
+              <td>{{'Staff-up.Male' | translate}}</td>
+            </ng-template>
+            <ng-template #notShowBlock>
+              <td>{{'Staff-up.Female' | translate}}</td>
+            </ng-template>
+          </tr>
+          <tr>
+            <td>{{'StaffInformation.DateOfBirth' | translate}}</td>
+            <td>{{staff.dateOfBirth | date:'dd/MM/yyyy'}}</td>
+          </tr>
+          <tr>
+            <td>{{'StaffInformation.Address' | translate}}</td>
+            <td>{{staff.address}}</td>
+          </tr>
+          <tr>
+            <td>{{'StaffInformation.Email' | translate}}</td>
+            <td>{{staff.email}}</td>
+          </tr>
+          <tr>
+            <td>{{'StaffInformation.Phone' | translate}}</td>
+            <td>{{staff.phone}}</td>
+          </tr>
+          <tr>
+            <td>{{'StaffInformation.ContractDate' | translate}}</td>
+            <td>{{staff.contractDate | date:'dd/MM/yyyy'}}</td>
+          </tr>
+          <tr>
+            <td>{{'StaffInformation.Department' | translate}}</td>
+            <td>{{staff.departmentName}}</td>
+          </tr>
+          <tr>
+            <td>{{'StaffInformation.Position' | translate}}</td>
+            <td>{{staff.positionName}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

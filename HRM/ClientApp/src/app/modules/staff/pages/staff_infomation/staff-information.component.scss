@@ -1,0 +1,58 @@
+td:first-child {
+  font-weight:bold;
+}
+.avatar-image {
+  width: 120px;
+  height: 120px;
+}
+
+.bd-callout-warning {
+  border-left-color: #f0ad4e !important;
+}
+
+.bd-callout {
+  border: 1px solid #eee;
+  border-left-width: .25rem;
+  border-radius: .25rem;
+}
+
+.img-thumbnail {
+  padding: 0px !important;
+}
+
+img {
+  margin: 28%;
+}
+
+.no-border {
+  border: 0px !important;
+}
+
+li {
+  border: 0px !important;
+  cursor: pointer;
+}
+
+.item-active {
+  border-left: 1px solid #007bff !important;
+  border-left-width: 0.25rem !important;
+  background-color: aliceblue;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.pd-10 {
+    padding: 10px;
+}
+
+.card > .list-group:last-child .list-group-item:last-child {
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.item-info {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  margin-top: -50px;
+}

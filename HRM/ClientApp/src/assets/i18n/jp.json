@@ -1,0 +1,316 @@
+{
+  "Login": {
+    "Title": "ウェルカム",
+    "Username": "ユーザネーム",
+    "Password": "パスワード",
+    "BtnLogin": "ログイン",
+    "LblFogotPassword": "パスワードを忘れた場合?",
+    "LblCopyright": "コピーライト 2021",
+    "Message": {
+      "UsernameRequired": "ユーザー名が必要です",
+      "PasswordRequired": "パスワードが必要です",
+      "UsernamePasswordWrong": "ユーザー名またはパスワードが正しくありません!",
+      "UserInactive": "ユーザーは非アクティブです!"
+    }
+  },
+  "ResetPassword": {
+    "Title": "パスワードのリセット",
+    "Email": "メール",
+    "BtnSubmit": "送信",
+    "LblHasAccount": "すでにアカウントを持っていますか? ",
+    "LblLogin": "ログイン",
+    "Message": {
+      "EmailRequired": "電子メールが必要です",
+      "EmailValid": "有効な電子メール アドレスを入力してください"
+    }
+  },
+  "ResetSuccess": {
+    "Title": {
+      "Success": "成功のリセット!",
+      "Error": "リセット エラー!"
+    },
+    "BtnBackLogin": "ログインに戻る",
+    "Message": {
+      "Success": "新しいパスワードがメールアドレスに送信されました。",
+      "Error": "パスワードをリセットできません。後でもう一度お試しください！"
+    }
+  },
+  "Dashboard": {
+    "Title": "ダッシュ ボード",
+    "LblStaff": "スタッフ",
+    "LblDepartment": "部門"
+  },
+  "Header": {
+    "Dashboard": "ダッシュ ボード",
+    "Staff": "スタッフ",
+    "Department": "部門",
+    "Project": "プロジェクト",
+    "Profile": "プロファイル",
+    "Role": "役割",
+    "Layout": "レイアウト",
+    "ChangePassword": "パスワードの変更",
+    "Logout": "ログアウト",
+    "Account": {
+      "Title": "管理",
+      "Activation": "活性 化",
+      "Register": "登録"
+    },
+    "Skill": "スキル",
+    "Devices": "デバイス",
+    "DeviceTypes": "デバイスの種類"
+  },
+  "ExportHeader": {
+    "Id": "従業員コード",
+    "FirstName": "姓",
+    "LastName": "名前",
+    "DateOfBirth": "生年月日",
+    "Sex": "セックス",
+    "Address": "住所",
+    "Email": "メール",
+    "Phone": "電話",
+    "ContractDate": "契約日",
+    "Department": "部門",
+    "Position": "位置"
+  },
+  "Register": {
+    "Title": "アカウントを追加",
+    "Username": "ユーザー名",
+    "Staff": "スタッフ",
+    "LoginUser": "ログインユーザー",
+    "Role": "役割",
+    "Password": "パスワード",
+    "ConfirmPassword": "パスワードを認証",
+    "BtnRegis": "作成",
+    "LblCopyright": "コピーライト 2021",
+    "ErrorModalTitle": "エラーを作成",
+    "SuccessModalTitle": "成功する",
+    "Message": {
+      "UsernameRequired": "ユーザー名が必要です",
+      "StaffRequired": "スタッフが必要です",
+      "RoleRequired": "役割が必要です",
+      "PasswordRequired": "パスワードが必要です",
+      "PasswordNotMatch": "両方のパスワードが一致しません",
+      "CreateSuccess": "アカウントの成功を作成する",
+      "CreateFail": "アカウントはすでに存在しています。別のアカウントを選択してください",
+      "PasswordMinLength": "8文字まで入力できます",
+      "PasswordMaxLength": "最大50文字を入力してください"
+    }
+  },
+  "ChangePassword": {
+    "Title": "パスワードを変更する",
+    "OldPassword": "以前のパスワード",
+    "NewPassword": "新しいパスワード",
+    "ConfirmPassword": "パスワードを認証する",
+    "btnCancel": "キャンセル",
+    "btnDone": "完成",
+    "Message": {
+      "OldPasswordRequired": "古いパスワードが必要です",
+      "NewPasswordRequired": "新しいパスワードが必要で、8文字以上である",
+      "ConfirmPasswordRequired": "確認パスワードが必要です",
+      "PasswordNotMatch": "両方のパスワードが一致しません",
+      "ChangePasswordError": "古いパスワードが間違っています！",
+      "ChangePasswordSuccess": "パスワードの変更に成功しました！"
+
+    }
+  },
+  "StaffInformation": {
+    "Title": "ユーザー情報",
+    "Skill": "スキル",
+    "Edit": "編集する",
+    "Id": "従業員コード",
+    "FullName": "名前",
+    "Sex": "性別",
+    "DateOfBirth": "生年月日",
+    "PersonalId": "個人ID",
+    "Address": "住所",
+    "Email": "メール",
+    "Phone": "電話",
+    "ContractDate": "契約日",
+    "Department": "部門",
+    "Position": "位置",
+    "btnBack": "戻る",
+    "lblMonths": "月",
+    "lblCode": "VN"
+  },
+  "Staff-up": {
+    "Title": "スタッフの編集",
+    "UpdateSuccess": "成功",
+    "UpdateFailed": "失敗した",
+    "ContentUpdateSuccess": "アップデート成功！",
+    "ContentUpdateFailed": "更新失敗!",
+    "btnUpload": "アップロード",
+    "FirstName": "ファーストネーム",
+    "DateOfBirth": "生年月日",
+    "PersonalId": "個人ID",
+    "Address": "住所",
+    "Phone": "電話",
+    "ContractDate": "契約日",
+    "Department": "部門",
+    "LastName": "苗字",
+    "Sex": "性別",
+    "Male": "男性",
+    "Female": "女性",
+    "Email": "Eメール",
+    "Position": "ポジション",
+    "btnSave": "セーブ",
+    "btnCancel": "キャンセル",
+    "btnBack": "バック",
+    "Message": {
+      "FirstNameRequired": "名は必須です！",
+      "LastNameRequired": "姓が必要です！",
+      "DateOfBirthRequired": "生年月日が必要です！",
+      "SexisRequired": "セックスが必要です！",
+      "PersonalIdRequired": "個人IDが必要です！",
+      "AddressRequired": "住所は必須です！",
+      "EmailRequired": "メールが必要です！",
+      "PhoneRequired": "電話が必要です！",
+      "ContractDateRequired": "契約日が必要です！",
+      "DepartmentRequired": "部署が必要です！",
+      "PositionRequired": "ポジションが必要です！",
+      "SexValid": "セックスは無効ではありません！",
+      "DateOfBirthValid": "生年月日は無効ではありません！",
+      "PersonalIdValid": "個人IDは無効ではありません！",
+      "EmailValid": "メールは無効ではありません！",
+      "PhoneValid": "電話は無効ではありません！",
+      "ContractDateValid": "契約日は無効ではありません！",
+      "DepartmentValid": "部署は無効ではありません！",
+      "PositionValid": "ポジションは無効ではありません！"
+    }
+  },
+  "StaffRegister": {
+    "Title": "スタッフを作成",
+    "Avatar": "ユーザーアバター",
+    "SelectImage": "画像を選択",
+    "FirstName": "姓 (*)",
+    "LastName": "名前 (*)",
+    "DateOfBirth": "生年月日 (*)",
+    "Sex": "性別 (*)",
+    "Address": "住所",
+    "PersonalEmail": "個人的なメール (*)",
+    "Phone": "電話番号",
+    "Id": "スタッフコード (*)",
+    "ContractDate": "契約調印日",
+    "Department": "部署",
+    "Position": "位置",
+    "personalId": "個人ID",
+    "Save": "セーブ",
+    "Clear": "晴れ",
+    "Back": "バック",
+    "Message": {
+      "Success": "登録は成功です！",
+      "Failed": "登録に失敗しました!",
+      "FailIdExist": "スタッフコードが存在しました！",
+      "FailCompanyEmailExist": "会社のメールが存在しました！",
+      "Error": "システムエラー！",
+      "ValidRequired": "必須.",
+      "ValidPhoneNumber": "正しい電話番号の形式を入力してください.",
+      "ValidEmail": "正しいメール形式を入力してください.",
+      "ValidNumber": "番号を入力してください.",
+      "ValidIdPerson": "正しいId Personフォーマットを入力してください.",
+      "ValidDateValue": "日付の値が無効です"
+    },
+    "SexValue": {
+      "Male": "男",
+      "Female": "女"
+    }
+  },
+  "Modal": {
+    "Title": {
+      "Error": "エラー",
+      "Success": "成功",
+      "Confirm": "確認",
+      "Warning": "警告"
+    },
+    "Message": {
+      "SessionExp": "セッションの有効期限が切れています。ログインをもう一度お試しください。",
+      "ConfirmDel": "このデータストリームを削除しますか ?"
+    },
+    "Action": {
+      "Ok": "はい",
+      "Cancel": "キャンセル"
+    }
+  },
+  "StaffList": {
+    "ScreenName": "スタッフ管理",
+    "SearchPanel": "サーチ",
+    "txtName": "ユーザー名:",
+    "btnSearch": "サーチ",
+    "btnClear": "クリアー",
+    "Name": "名前",
+    "DateOfBirth": "誕生日",
+    "Sex": "性別",
+    "Address": "アドレス",
+    "PersonalEmail": "個人的なメール",
+    "Phone": "電話番号",
+    "Id": "スタッフコード",
+    "ContractDate": "契約日",
+    "Department": "部門",
+    "Position": "位置",
+    "personalId": "個人ID",
+    "Action": "アクション",
+    "Select": "--選択する--",
+    "placeholderInput": "検索するユーザー名を入力",
+    "Message": {
+      "Success": " スタッフは正常に削除されました.",
+      "Warning1": "削除する行を選択してください.",
+      "Warning2": "既存のスタッフがリーダーです."
+    }
+  },
+  "Tooltip": {
+    "tipRegister": "スタッフの登録",
+    "tipDelete": "スタッフの削除",
+    "tipEdit": "スタッフの編集",
+    "tipView": "詳細スタッフを表示",
+    "tipPanelSearchShow": "クリックして検索パネルを展開します",
+    "tipAddDepartment": "部門を追加",
+    "tipEditDepartment": "部門を編集",
+    "tipDeleteDepartment": "部門を削除"
+  },
+  "pagination": {
+    "Previous": "前",
+    "Next": "次"
+  },
+  "Search": {
+    "Advanced": "詳細",
+    "Search": "検索..."
+  },
+  "Department": {
+    "Title": "部門管理",
+    "ID": "ID",
+    "Name": "部門",
+    "Leader": "盟主",
+    "Action": "アクション",
+    "ConfirmDel": "この部門を削除しますか？",
+    "SuccessDel": "部門が削除されました。",
+    "ErrorDel": "部門は削除できません。",
+    "ErrorExistStaff": "この部門は削除できません。 この部門にはスタッフがいます",
+    "placeholderInput": "部署名を入力..."
+  },
+  "DepartmentAdd": {
+    "Title": "部門の作成",
+    "DepartmentName": "部署名",
+    "DepartmentLead": "部門リーダー",
+    "ParentDepartment": "親部門",
+    "Create": "作成",
+    "BtnCancel": "キャンセル",
+    "NameValidate": "部署名は必須です！",
+    "AddSuccess": "部門はすでに追加されています。",
+    "AddFail": "エラー。 部門が存在します！"
+  },
+  "DepartmentEdit": {
+    "Title": "部署の編集",
+    "DepartmentName": "部署名",
+    "DepartmentLead": "部門リーダー",
+    "ParentDepartment": "親部門",
+    "Save": "セーブ",
+    "BtnCancel": "キャンセル",
+    "NameValidate": "必須です！",
+    "UpdateSuccess": "部門の更新に成功しました。",
+    "UpdateFail": "エラー。 部門の更新に失敗しました！",
+    "EditFail": "エラー。 部門名が存在します！"
+  },
+  "ModalConfirm": {
+    "Ok": "同意",
+    "Cancel": "キャンセル"
+  }
+}

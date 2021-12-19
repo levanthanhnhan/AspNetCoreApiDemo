@@ -1,0 +1,159 @@
+<h2>{{'Staff-up.Title' | translate}}</h2>
+<div class="container rounded mt-2 mb-3">
+  <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" (keydown.enter)="noSubmit($event)" (change)="f.submitted && onChange()">
+
+    <div class="row">
+      <div class="col">
+        <div *ngIf="f.submitted && firstName.invalid">
+          <p class="text-danger">{{'Staff-up.Message.FirstNameRequired' | translate}}</p>
+        </div>
+      </div>
+      <div class="col">
+        <div *ngIf="f.submitted && lastName.invalid">
+          <p class="text-danger">{{'Staff-up.Message.LastNameRequired' | translate}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col">
+        <p class="text-font">{{'Staff-up.FirstName' | translate}}</p>
+        <input class="form form-control" type="text" name="firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" placeholder="{{'Staff-up.FirstName' | translate}}" required [(ngModel)]="staff.firstName">
+      </div>
+      <div class="col">
+        <p class="text-font">{{'Staff-up.LastName' | translate}}</p>
+        <input class="form form-control" type="text" name="lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" placeholder="{{'Staff-up.LastName' | translate}}" required [(ngModel)]="staff.lastName">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div *ngIf="f.submitted && dateOfBirth.invalid">
+          <p class="text-danger">{{'Staff-up.Message.DateOfBirthRequired' | translate}}</p>
+        </div>
+        <div *ngIf="error.dateOfBirth.status">
+          <p class="text-danger">{{'Staff-up.Message.DateOfBirthValid' | translate}}</p>
+        </div>
+      </div>
+      <div class="col">
+        <div *ngIf="f.submitted && sex.invalid">
+          <p class="text-danger">{{'Staff-up.Message.SexisRequired' | translate}}</p>
+        </div>
+        <div *ngIf="error.sex.status">
+          <p class="text-danger">{{'Staff-up.Message.SexValid' | translate}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col">
+        <p class="text-font">{{'Staff-up.DateOfBirth' | translate}}</p>
+        <input class="form form-control" type="date" name="dateOfBirth" #dateOfBirth="ngModel" [ngClass]="{ 'is-invalid': f.submitted && dateOfBirth.invalid || error.dateOfBirth.status}" required [(ngModel)]="staff.dateOfBirth">
+      </div>
+      <div class="col">
+        <p class="text-font">{{'Staff-up.Sex' | translate}}</p>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="sex" #sex="ngModel" id="sex1" required [value]="1" [(ngModel)]="staff.sex">
+          <label class="form-check-label" for="sex1">{{'Staff-up.Male' | translate}}</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="sex" #sex="ngModel" id="sex2" required [value]="0" [(ngModel)]="staff.sex">
+          <label class="form-check-label" for="sex2">{{'Staff-up.Female' | translate}}</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col">
+        <div *ngIf="f.submitted && email.invalid">
+          <p class="text-danger">{{'Staff-up.Message.EmailRequired' | translate}}</p>
+        </div>
+        <div *ngIf="error.email.status">
+          <p class="text-danger">{{'Staff-up.Message.EmailValid' | translate}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col">
+        <p class="text-font">{{'Staff-up.Address' | translate}}</p>
+        <input class="form form-control" type="text" name="address" #address="ngModel" placeholder="{{'Staff-up.Address' | translate}}" [(ngModel)]="staff.address">
+      </div>
+      <div class="col">
+        <p class="text-font">{{'Staff-up.Email' | translate}}</p>
+        <input class="form form-control" type="text" name="email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid || error.email.status }" placeholder="{{'Staff-up.Email' | translate}}" required [(ngModel)]="staff.email">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div *ngIf="f.submitted && contractDate.invalid">
+          <p class="text-danger">{{'Staff-up.Message.ContractDateRequired' | translate}}</p>
+        </div>
+        <div *ngIf="error.contractDate.status">
+          <p class="text-danger">{{'Staff-up.Message.ContractDateValid' | translate}}</p>
+        </div>
+      </div>
+      <div class="col">
+        <div *ngIf="error.phone.status">
+          <p class="text-danger">{{'Staff-up.Message.PhoneValid' | translate}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col">
+        <p class="text-font">{{'Staff-up.ContractDate' | translate}}</p>
+        <input class="form form-control" type="date" name="contractDate" #contractDate="ngModel" [ngClass]="{ 'is-invalid': f.submitted && contractDate.invalid || error.contractDate.status }" required [(ngModel)]="staff.contractDate">
+      </div>
+      <div class="col">
+        <p class="text-font">{{'Staff-up.Phone' | translate}}</p>
+        <input class="form form-control" type="text" name="phone" #phone="ngModel" [ngClass]="{ 'is-invalid': error.phone.status }" placeholder="{{'Staff-up.Phone' | translate}}" [(ngModel)]="staff.phone">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div *ngIf="f.submitted && departmentId.invalid">
+          <p class="text-danger">{{'Staff-up.Message.DepartmentRequired' | translate}}</p>
+        </div>
+        <div *ngIf="error.departmentId.status">
+          <p class="text-danger">{{'Staff-up.Message.DepartmentValid' | translate}}</p>
+        </div>
+      </div>
+      <div class="col">
+        <div *ngIf="f.submitted && positionId.invalid">
+          <p class="text-danger">{{'Staff-up.Message.PositionRequired' | translate}}</p>
+        </div>
+        <div *ngIf="error.positionId.status">
+          <p class="text-danger">{{'Staff-up.Message.PositionValid' | translate}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col">
+        <p class="text-font">{{'Staff-up.Department' | translate}}</p>
+        <select class="form form-control" name="departmentId" #departmentId="ngModel" [ngClass]="{ 'is-invalid': f.submitted && departmentId.invalid || error.departmentId.status}" required [(ngModel)]="staff.departmentId">
+          <option value="-1">--</option>
+          <option *ngFor="let dep of departmentList" [value]="dep.id">{{dep.name}}</option>
+        </select>
+      </div>
+      <div class="col">
+        <p class="text-font">{{'Staff-up.Position' | translate}}</p>
+        <select class="form form-control" name="positionId" #positionId="ngModel" [ngClass]="{ 'is-invalid': f.submitted && positionId.invalid || error.positionId.status }" required [(ngModel)]="staff.positionId">
+          <option value="-1">--</option>
+          <option *ngFor="let pos of positionList" [value]="pos.id">{{pos.name}}</option>
+        </select>
+      </div>
+    </div>
+
+    <!--button-->
+    <div class="row mb-2">
+      <div class="col">
+        <div class="float-right">
+          <input class="btn btn-primary min-width" type="submit" value="{{'Staff-up.btnSave' | translate}}" />
+          <button class="btn btn-outline-secondary ml-2" (click)="cancle($event)">{{'Staff-up.btnCancel' | translate}}</button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>

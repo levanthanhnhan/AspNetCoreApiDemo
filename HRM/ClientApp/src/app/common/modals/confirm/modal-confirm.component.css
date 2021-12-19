@@ -1,0 +1,9 @@
+.header-content {
+  justify-content: normal !important;
+}
+
+.fixed {
+  margin-top: 7px;
+  margin-right: 7px;
+  font-size: 25px
+}

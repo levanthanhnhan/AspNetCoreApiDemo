@@ -1,0 +1,70 @@
+.navbar-dark .navbar-nav .nav-link {
+  color: rgb(255, 255, 255);
+}
+
+.font-bold {
+    font-weight:500;
+}
+
+.mg-bold {
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.shadow {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}
+
+.dropdowm {
+  cursor: pointer;
+}
+
+.flag-icon-vn {
+  background-image: url("/assets/vn.svg");
+}
+
+.flag-icon-jp {
+  background-image: url("/assets/jp.svg");
+}
+
+.flag-icon-uk {
+  background-image: url("/assets/uk.svg");
+}
+
+.flag-icon {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 1.33333333em;
+  height: 1.33333333em;
+  line-height: 1em;
+}
+
+.dropdown-item:hover {
+  background-color: #007BFF !important;
+  color: white !important;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+  .dropdown-submenu::after {
+    transform: rotate(-90deg);
+    position: absolute;
+    right: 6px;
+    top: .8em;
+  }
+
+.sub-menu {
+  top: 40%;
+  left: 100%;
+  margin-left: .1rem;
+  margin-right: .1rem;
+}

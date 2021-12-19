@@ -1,0 +1,59 @@
+<div id="accordion">
+  <div class="card1">
+    <div>
+      <div class="search">
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <a class="svg-wrapper" (click)="search()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+              </svg>
+            </a>
+            <input id="search" #txtSearch type="text" placeholder="{{'Search.Search' | translate}}" autocomplete="off" (keyup.enter)="search()"/>
+          </div>
+          <div class="input-field second-wrap">
+            <button class="btn-search" type="button" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">{{'Search.Advanced' | translate}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body mb-80">
+
+        <!-- STAFF COMPONENT -->
+        <div class="row" [hidden]="!isShowStaffContainer">
+          <div class="col">
+            <p class="font-weight-bold">{{'StaffList.Department' | translate}}</p>
+            <select class="browser-default custom-select" (change)='onChangeDepartment($event)'>
+              <option selected value="0">{{'StaffList.Select' | translate}}</option>
+              <option *ngFor="let dept of listDept"
+                      [selected]="dept.id === deptActive"
+                      [value]="dept.id">
+                {{dept.name}}
+              </option>
+            </select>
+          </div>
+          <div class="col">
+            <p class="font-weight-bold">{{'StaffList.Position' | translate}}</p>
+            <select class="browser-default custom-select" (change)='onChangePosition($event)'>
+              <option selected value="0">{{'StaffList.Select' | translate}}</option>
+              <option *ngFor="let pos of listPos"
+                      [selected]="pos.id === posActive"
+                      [value]="pos.id">
+                {{pos.name}}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <!-- BUTTON CONTAINER -->
+        <div class="mt-20 float-right">
+          <button type="submit" (click)="search()" class="btn btn-success ml-1 button-search-clear btn-search-color">{{'StaffList.btnSearch' | translate}}</button>
+          <button type="submit" (click)="clear()" class="btn btn-secondary ml-1 button-search-clear btn-clear">{{'StaffList.btnClear' | translate}}</button>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>

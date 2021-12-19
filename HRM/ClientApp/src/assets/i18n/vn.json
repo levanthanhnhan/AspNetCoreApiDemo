@@ -1,0 +1,317 @@
+{
+  "Login": {
+    "Title": "Xin chào",
+    "Username": "Tên đăng nhập",
+    "Password": "Mật khẩu",
+    "BtnLogin": "Đăng nhập",
+    "LblFogotPassword": "Quên mật khẩu",
+    "LblCopyright": "Bản quyền 2021",
+    "Message": {
+      "UsernameRequired": "Tên đăng nhập không thể trống",
+      "PasswordRequired": "Mật khẩu không thể trống",
+      "UsernamePasswordWrong": "Tên đăng nhập hoặc mật khẩu không đúng!",
+      "UserInactive": "Tài khoản chưa kích hoạt!"
+    }
+  },
+  "ResetPassword": {
+    "Title": "Quên mật khẩu",
+    "Email": "Nhập email của bạn",
+    "BtnSubmit": "Xác nhận",
+    "LblHasAccount": "Bạn đã có tài khoản? ",
+    "LblLogin": "Đăng nhập",
+    "Message": {
+      "EmailRequired": "Email không thể trống",
+      "EmailValid": "Email không hợp lệ"
+    }
+  },
+  "ResetSuccess": {
+    "Title": {
+      "Success": "Khôi phục thành công!",
+      "Error": "Khôi phục thất bại!"
+    },
+    "BtnBackLogin": "Quay lại đăng nhập",
+    "Message": {
+      "Success": "Mật khẩu mới đã được gửi về email của bạn.",
+      "Error": "Không thể khôi phục mật khẩu lúc này. Vui lòng thử lại sau!"
+    }
+  },
+  "Dashboard": {
+    "Title": "Tổng quan",
+    "LblStaff": "Nhân viên",
+    "LblDepartment": "Bộ phận"
+  },
+  "Header": {
+    "Dashboard": "Tổng quan",
+    "Staff": "Nhân viên",
+    "Department": "Bộ phận",
+    "Project": "Dự án",
+    "Profile": "Hồ sơ",
+    "Role": "Vai trò",
+    "Layout": "Bố trí",
+    "ChangePassword": "Đổi mật khẩu",
+    "Logout": "Đăng xuất",
+    "Account": {
+      "Title": "Quản lý",
+      "Activation": "Kích hoạt tài khoản",
+      "Register": "Tạo tài khoản"
+    },
+    "Skill": "Kỹ năng",
+    "Devices": "Thiết bị",
+    "DeviceTypes": "Loại thiết bị"
+  },
+  "ExportHeader": {
+    "Id": "Mã nhân viên",
+    "FirstName": "Họ",
+    "LastName": "Tên",
+    "DateOfBirth": "Ngày sinh",
+    "Sex": "Giới tính",
+    "Address": "Địa chỉ",
+    "Email": "Email",
+    "Phone": "Điện thoại",
+    "ContractDate": "Ngày ký hợp đồng",
+    "Department": "Bộ phận",
+    "Position": "Chức vụ"
+  },
+  "Register": {
+    "Title": "Tạo Tài Khoản",
+    "Role": "Vai trò",
+    "Username": "Tài khoản",
+    "Staff": "Nhân viên",
+    "LoginUser": "Tên đăng nhập",
+    "Password": "Mật khẩu",
+    "ConfirmPassword": "Xác nhận mật khẩu",
+    "BtnRegis": "Khởi Tạo",
+    "LblCopyright": "Bản quyền 2021",
+    "ErrorModalTitle": "Tạo tài khoản thất bại",
+    "SuccessModalTitle": "Tạo tài khoản thành công",
+    "Message": {
+      "UsernameRequired": "Tên đăng nhập phải được chọn",
+      "StaffRequired": "Nhân viên phải được chọn",
+      "RoleRequired": "Vai trò phải được chọn",
+      "PasswordRequired": "Mật khẩu không thể trống",
+      "PasswordNotMatch": "Mật khẩu không khớp",
+      "CreateSuccess": "Tạo tài khoản thành công",
+      "CreateFail": "Tài khoản đã tồn tại, vui lòng chọn tài khoản khác",
+      "PasswordMinLength": "Nhập vào ít nhất 8 ký tự",
+      "PasswordMaxLength": "Nhập vào tối đa 50 ký tự"
+    }
+  },
+  "ChangePassword": {
+    "Title": "Đổi mật khẩu",
+    "OldPassword": "Mật khẩu cũ",
+    "NewPassword": "Mật khẩu mới",
+    "ConfirmPassword": "Xác nhận mật khẩu",
+    "btnCancel": "Hủy",
+    "btnDone": "Hoàn thành",
+    "Message": {
+      "OldPasswordRequired": "Mật khẩu cũ là bắt buộc",
+      "NewPasswordRequired": "Mật khẩu mới là bắt buộc và có 8 ký tự trở lên",
+      "ConfirmPasswordRequired": "Xác nhận mật khẩu là bắt buộc",
+      "PasswordNotMatch": "Mật khẩu không khớp",
+      "ChangePasswordError": "Mật khẩu cũ không đúng!",
+      "ChangePasswordSuccess": "Thay đổi mật khẩu là thành công!"
+
+    }
+  },
+  "StaffInformation": {
+    "Title": "Thông tin nhân viên",
+    "Skill": "Kĩ năng",
+    "Edit": "Sửa",
+    "Id": "Mã nhân viên:",
+    "FullName": "Tên:",
+    "Sex": "Giới tính:",
+    "DateOfBirth": "Ngày sinh:",
+    "PersonalId": "Chứng minh thư:",
+    "Address": "Địa chỉ:",
+    "Email": "Email:",
+    "Phone": "Điện thoại:",
+    "ContractDate": "Ngày ký hợp đồng:",
+    "Department": "Bộ phận:",
+    "Position": "Chức vụ:",
+    "btnBack": "Quay lại",
+    "lblMonths": "tháng",
+    "lblCode": "VN"
+  },
+  "Staff-up": {
+    "Title": "Chỉnh sửa",
+    "UpdateSuccess": "Thành công",
+    "UpdateFailed": "Thất bại",
+    "ContentUpdateSuccess": "Cập nhật thành công!",
+    "ContentUpdateFailed": "Cập nhật thất bại!",
+    "btnUpload": "TẢI LÊN",
+    "FirstName": "Tên",
+    "DateOfBirth": "Ngày sinh",
+    "PersonalId": "CMND",
+    "Address": "Địa chỉ",
+    "Phone": "Điện thoại",
+    "ContractDate": "Thời hạn hợp đồng",
+    "Department": "Bộ phận",
+    "LastName": "Họ",
+    "Sex": "Giới tính",
+    "Male": "Nam",
+    "Female": "Nữ",
+    "Email": "Email",
+    "Position": "Chức vụ",
+    "btnSave": "Lưu",
+    "btnCancel": "Hủy",
+    "btnBack": "Trở lại",
+    "Message": {
+      "FirstNameRequired": "Tên là bắt buộc!",
+      "LastNameRequired": "Họ là bắt buộc!",
+      "DateOfBirthRequired": "Ngày sinh là bắt buộc!",
+      "SexisRequired": "Giới tính là bắt buộc!",
+      "PersonalIdRequired": "CMND là bắt buộc!",
+      "AddressRequired": "Địa chỉ là bắt buộc!",
+      "EmailRequired": "Email là bắt buộc!",
+      "PhoneRequired": "Điện thoại là bắt buộc!",
+      "ContractDateRequired": "Thời hạn hợp đồng là bắt buộc!",
+      "DepartmentRequired": "Bộ phận là bắt buộc!",
+      "PositionRequired": "Chức vụ là bắt buộc!",
+      "SexValid": "Giới tính không hợp lệ!",
+      "DateOfBirthValid": "Ngày sinh không hợp lệ!",
+      "PersonalIdValid": "CMND không hợp lệ!",
+      "EmailValid": "Email không hợp lệ!",
+      "PhoneValid": "Điện thoại không hợp lệ!",
+      "ContractDateValid": "Thời hạn hợp đồng không hợp lệ!",
+      "DepartmentValid": "Bộ phận không hợp lệ!",
+      "PositionValid": "Chức vụ không hợp lệ!"
+    }
+  },
+  "StaffRegister": {
+    "Title": "Thêm mới nhân viên",
+    "Avatar": "Ảnh nhân viên",
+    "SelectImage": "Chọn ảnh",
+    "FirstName": "Họ, chữ lót (*)",
+    "LastName": "Tên (*)",
+    "DateOfBirth": "Ngày sinh (*)",
+    "Sex": "Giới tính (*)",
+    "Address": "Địa chỉ",
+    "PersonalEmail": "Email cá nhân (*)",
+    "Phone": "Số điện thoại",
+    "Id": "Mã nhân viên (*)",
+    "ContractDate": "Ngày kí hợp đồng",
+    "Department": "Bộ phận",
+    "Position": "Chức vụ",
+    "personalId": "Số CMND",
+    "Save": "Lưu",
+    "Clear": "Xóa",
+    "Back": "Trở lại",
+    "Message": {
+      "Success": "Đăng ký thành công!",
+      "Failed": "Đăng kí thất bại!",
+      "FailIdExist": "Mã nhân viên đã tồn tại!",
+      "FailCompanyEmailExist": "Email công ty đã tồn tại!",
+      "Error": "Xãy ra lỗi hệ thống!",
+      "ValidRequired": "Bắt buộc nhập",
+      "ValidPhoneNumber": "Nhập đúng định dạng mã số điện thoại",
+      "ValidEmail": "Nhập đúng định dạng email",
+      "ValidNumber": "Chỉ nhập số",
+      "ValidIdPerson": "Nhập đúng định dạng thẻ",
+      "ValidDateValue": "Giá trị không hợp lệ"
+    },
+    "SexValue": {
+      "Male": "NAM",
+      "Female": "NỮ"
+    }
+  },
+  "Modal": {
+    "Title": {
+      "Error": "Lỗi",
+      "Success": "Thành công",
+      "Confirm": "Xác nhận",
+      "Warning": "Cảnh báo"
+    },
+    "Message": {
+      "SessionExp": "Phiên làm việc đã hết hạn. Vui lòng đăng nhập lại!",
+      "ConfirmDel": "Bạn có muốn xóa dòng dữ liệu này ?"
+    },
+    "Action": {
+      "Ok": "Đồng ý",
+      "Cancel": "Hủy"
+    }
+  },
+  "StaffList": {
+    "ScreenName": "Quản lý nhân viên",
+    "SearchPanel": "Tìm kiếm",
+    "txtName": "Tên nhân viên:",
+    "btnSearch": "Tìm kiếm",
+    "btnClear": "Xóa",
+    "Name": "Tên",
+    "DateOfBirth": "Ngày sinh",
+    "Sex": "Giới tính",
+    "Address": "Địa chỉ",
+    "PersonalEmail": "Email cá nhân",
+    "Phone": "Số điện thoại",
+    "Id": "Mã nhân viên",
+    "ContractDate": "Ngày ký hợp đồng",
+    "Department": "Bộ phận",
+    "Position": "Chức vụ",
+    "personalId": "Mã cá nhân",
+    "Action": "Hành động",
+    "Select": "--Chọn--",
+    "placeholderInput": "Nhập họ,tên nhân viên để tìm kiếm",
+    "Message": {
+      "Success": " nhân viên đã được xóa thành công.",
+      "Warning1": "Làm ơn chọn nhân viên bạn muốn xóa.",
+      "Warning2": "Nhân viên bạn đã xóa là Leader."
+    }
+  },
+  "Tooltip": {
+    "tipRegister": "Đăng ký nhân viên",
+    "tipDelete": "Xóa nhân viên",
+    "tipEdit": "Sửa nhân viên",
+    "tipView": "Xem chi tiết thông tin nhân viên",
+    "tipPanelSearchShow": "Click để đóng phần tìm kiếm",
+    "tipPanelSearchHide": "Click để mở ra phần tìm kiếm",
+    "tipAddDepartment": "Thêm bộ phận",
+    "tipEditDepartment": "Chỉnh sửa bộ phận",
+    "tipDeleteDepartment": "Xóa bộ phận"
+  },
+  "pagination": {
+    "Previous": "Trước",
+    "Next": "Sau"
+  },
+  "Search": {
+    "Advanced": "TÌM KIẾM THÊM",
+    "Search": "Tìm kiếm..."
+  },
+  "Department": {
+    "Title": "Quản lý Bộ phận",
+    "ID": "ID",
+    "Name": "Bộ phận",
+    "Leader": "Trưởng bộ phận",
+    "Action": "Hành động",
+    "ConfirmDel": "Bạn có muốn xóa bộ phận này không？",
+    "SuccessDel": "Bộ phân đã được xóa.",
+    "ErrorDel": "Khổng thể xóa bộ phận.",
+    "ErrorExistStaff": "Không thể xóa bộ phận này. Bộ phận này có nhân viên tồn tại.",
+    "placeholderInput": "Tìm kiếm tên bộ phận..."
+  },
+  "DepartmentAdd": {
+    "Title": "Thêm mới bộ phận",
+    "DepartmentName": "Tên bộ phận",
+    "DepartmentLead": "Trưởng bộ phận",
+    "ParentDepartment": "Bộ phận cấp trên",
+    "Create": "Tạo",
+    "BtnCancel": "Hủy",
+    "NameValidate": "Yêu cầu nhập tên bộ phận!",
+    "AddSuccess": "Bộ phận đã được thêm.",
+    "AddFail": "Lỗi. Bộ phận đã tồn tại!"
+  },
+  "DepartmentEdit": {
+    "Title": "Chỉnh sửa bộ phận",
+    "DepartmentName": "Tên bộ phận",
+    "DepartmentLead": "Trưởng bộ phận",
+    "ParentDepartment": "Bộ phận cấp trên",
+    "Save": "Lưu",
+    "BtnCancel": "Hủy",
+    "NameValidate": "Yêu cầu nhập tên bộ phận!",
+    "UpdateSuccess": "Cập nhật thành công.",
+    "UpdateFail": "Lỗi. Cập nhật không thành công.",
+    "EditFail": "Lỗi. Tên bộ phận đã tồn tại!"
+  },
+  "ModalConfirm": {
+    "Ok": "Đồng ý",
+    "Cancel": "Hủy"
+  }
+}

@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary font-bold">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" [hidden]="!displayNav.Dashboard">
+          <a class="nav-link" href="#" [routerLink]="['/Dashboard']">{{'Header.Dashboard' | translate}}</a>
+        </li>
+        <li class="nav-item" [hidden]="!displayNav.Staff">
+          <a class="nav-link" href="#" [routerLink]="['/Staff/List']">{{'Header.Staff' | translate}}</a>
+        </li>
+        <li class="nav-item" [hidden]="!displayNav.Department">
+          <a class="nav-link" href="#" [routerLink]="['/Department/List']">{{'Header.Department' | translate}}</a>
+        </li>
+        <li class="nav-item" [hidden]="!displayNav.Account">
+          <a class="nav-link" href="#" [routerLink]="['/Account/Register']">{{'Header.Account.Register' | translate}}</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-md-auto">
+        <li class="nav-item dropdown cursor">
+          <a class="nav-item nav-link dropdown-toggle mr-md-2" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <label class="form-check-label mg-bold">{{account.userName}}</label>
+          </a>
+          <div class="dropdown-menu dropdown-menu-md-right shadow" aria-labelledby="bd-versions">
+            <a class="dropdown-item" [routerLink]="['/Staff/', account.userId, 'Detail']">{{'Header.Profile' | translate}}</a>
+            <a class="dropdown-item" (click)="changePassword()">{{'Header.ChangePassword' | translate}}</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="logout()">{{'Header.Logout' | translate}}</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

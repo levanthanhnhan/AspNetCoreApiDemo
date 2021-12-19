@@ -1,0 +1,34 @@
+<h2> Staff Detail </h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Age
+      </th>
+      <th>
+        Address
+      </th>
+      <th>
+        Phone
+      </th>
+      <th>
+        Start Date
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="staff">
+      <td>{{staff.name}}</td>
+      <td>{{staff.age}}</td>
+      <td>{{staff.address}}</td>
+      <td>{{staff.phone}}</td>
+      <td>{{staff.startDate}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="back()" class="btn btn-outline-primary float-right">Back</button>

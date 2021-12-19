@@ -1,0 +1,112 @@
+<h2>{{'StaffRegister.Title' | translate}}</h2>
+<div class="container rounded mt-2">
+  <form name="register" #myForm="ngForm" [formGroup]="regFormGroup" (ngSubmit)="onSubmit()" (keydown.enter)="noSubmit($event)">
+    <div *ngIf="message">
+      <p *ngIf="msg === 1" class="alert alert-success">{{'StaffRegister.Message.Success' | translate}}</p>
+      <p *ngIf="msg === 0" class="alert alert-danger">{{'StaffRegister.Message.Error' | translate}}</p>
+      <p *ngIf="msg === 2" class="alert alert-danger">{{'StaffRegister.Message.FailIdExist' | translate}}</p>
+      <p *ngIf="msg === 3" class="alert alert-danger">{{'StaffRegister.Message.FailCompanyEmailExist' | translate}}</p>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col">
+        <div>{{'StaffRegister.FirstName' | translate}}</div>
+        <input type="text" class=" form form-control" formControlName="firstName" [ngClass]="{ 'is-invalid': submitted && regData.firstName.errors }">
+        <div *ngIf="submitted && regData.firstName.errors" class="alert-danger-text">
+          <span *ngIf="regData.firstName.errors.required">{{'StaffRegister.Message.ValidRequired' | translate}}</span>
+        </div>
+      </div>
+      <div class="col">
+        <div>{{'StaffRegister.LastName' | translate}}</div>
+        <input type="text" for="inlineCheckbox1" class="form form-control" formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && regData.lastName.errors }">
+        <div *ngIf="submitted && regData.lastName.errors" class="alert-danger-text">
+          <span *ngIf="regData.lastName.errors.required">{{'StaffRegister.Message.ValidRequired' | translate}}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row mb-2">
+      <div class="col">
+        <div>{{'StaffRegister.Sex' | translate}}</div>
+        <select id="Sex" name="sex" class="form form-control" formControlName="sex" [ngClass]="{ 'is-invalid': submitted && regData.sex.errors }">
+          <option value="1">{{'StaffRegister.SexValue.Male' | translate}}</option>
+          <option value="0">{{'StaffRegister.SexValue.Female' | translate}}</option>
+        </select>
+        <div *ngIf="submitted && regData.sex.errors" class="alert-danger-text">
+          <span *ngIf="regData.sex.errors.required">{{'StaffRegister.Message.ValidRequired' | translate}}</span>
+        </div>
+      </div>
+      <div class="col">
+        <div>{{'StaffRegister.DateOfBirth' | translate}}</div>
+        <input type="date" class="form form-control" formControlName="dateOfBirth" [ngClass]="{ 'is-invalid': submitted && regData.dateOfBirth.errors }">
+        <div *ngIf="submitted && regData.dateOfBirth.errors" class="alert-danger-text">
+          <span *ngIf="regData.dateOfBirth.errors.required">{{'StaffRegister.Message.ValidRequired' | translate}}</span>
+          <span *ngIf="regData.dateOfBirth.errors.DateValueValid">{{'StaffRegister.Message.ValidDateValue' | translate}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col">
+        <div>{{'StaffRegister.Address' | translate}}</div>
+        <input type="text" class="form form-control" formControlName="address">
+      </div>
+      <div class="col">
+        <div>{{'StaffRegister.Phone' | translate}}</div>
+        <input type="text" class="form form-control" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && regData.phone.errors }">
+        <div *ngIf="submitted && regData.phone.errors" class="alert-danger-text">
+          <span *ngIf="regData.phone.errors.pattern">{{'StaffRegister.Message.ValidPhoneNumber' | translate}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col">
+        <div>{{'StaffRegister.ContractDate' | translate}}</div>
+        <input type="date" class="form form-control" formControlName="contractDate" [ngClass]="{ 'is-invalid': submitted && regData.contractDate.errors }">
+        <div *ngIf="submitted && regData.contractDate.errors" class="alert-danger-text">
+          <span *ngIf="regData.contractDate.errors.DateValueValid">{{'StaffRegister.Message.ValidDateValue' | translate}}</span>
+        </div>
+      </div>
+      <div class="col">
+        <div>{{'StaffRegister.PersonalEmail' | translate}}</div>
+        <input type="text" class="form form-control mr-3" formControlName="email" [ngClass]="{ 'is-invalid': submitted && regData.email.errors }">
+        <div *ngIf="submitted && regData.email.errors" class="alert-danger-text">
+          <span *ngIf="regData.email.errors.required">{{'StaffRegister.Message.ValidRequired' | translate}}</span>
+          <span *ngIf="regData.email.errors.pattern">{{'StaffRegister.Message.ValidEmail' | translate}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col">
+        <div>{{'StaffRegister.Department' | translate}}</div>
+        <select class="form form-control" formControlName="departmentId">
+          <option value=""></option>
+          <option *ngFor="let deparmentDetail of deparment" value={{deparmentDetail.id}}>{{deparmentDetail.name}}</option>
+        </select>
+      </div>
+      <div class="col">
+        <div>{{'StaffRegister.Position' | translate}}</div>
+        <select class="form form-control" formControlName="positionId">
+          <option value=""></option>
+          <option *ngFor="let positiontDetail of position" value={{positiontDetail.id}}>{{positiontDetail.name}}</option>
+        </select>
+      </div>
+    </div>
+
+
+
+    <!--button-->
+    <div class="row mb-2">
+      <div class="col">
+        <div class="float-right">
+          <input type="submit" class="btn btn-primary" value="{{'StaffRegister.Save' | translate}}">
+          <input type="submit" class="btn btn-outline-secondary ml-2" [routerLink]="['/Staff/List']" (click)="back($event);" value="{{'StaffRegister.Back' | translate}}">
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>

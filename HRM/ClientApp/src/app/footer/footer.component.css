@@ -1,0 +1,22 @@
+.footer-copyright {
+  overflow: hidden;
+  color: black;
+  background-color: #dfefff;
+}
+
+.page-footer {
+  bottom: 0;
+  color: #fff;
+}
+
+a {
+  color: black;
+}
+
+footer {
+  /*position: fixed;*/
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

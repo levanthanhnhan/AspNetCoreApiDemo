@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+h2 {
+    margin: 20px 0 20px 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.modal-content {
+  animation-name: open;
+  animation-duration: 0.3s
+}
+
+@keyframes open {
+  0% {
+    transform: scale(0.5)
+  }
+
+  100% {
+    transform: scale(1)
+  }
+}
+
+button {
+    min-width: 75px !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+html, body { height: 100%; }

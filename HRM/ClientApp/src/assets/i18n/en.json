@@ -1,0 +1,314 @@
+{
+  "Login": {
+    "Title": "Welcome",
+    "Username": "Username",
+    "Password": "Password",
+    "BtnLogin": "Login",
+    "LblFogotPassword": "Forgot Password?",
+    "LblCopyright": "Copyright 2021",
+    "Message": {
+      "UsernameRequired": "Username is required",
+      "PasswordRequired": "Password is required",
+      "UsernamePasswordWrong": "Username or Password is incorrect!",
+      "UserInactive": "User is inactive!"
+    }
+  },
+  "ResetPassword": {
+    "Title": "Reset Password",
+    "Email": "Email address",
+    "BtnSubmit": "Submit",
+    "LblHasAccount": "Already have an account? ",
+    "LblLogin": "Login",
+    "Message": {
+      "EmailRequired": "Email is required",
+      "EmailValid": "Please provide a valid email address"
+    }
+  },
+  "ResetSuccess": {
+    "Title": {
+      "Success": "Reset Success!",
+      "Error": "Reset Error!"
+    },
+    "BtnBackLogin": "Back to login",
+    "Message": {
+      "Success": "Your new password has been sent to your email address.",
+      "Error": "Cannot reset password. Please try again later!"
+    }
+  },
+  "Dashboard": {
+    "Title": "Dashboard",
+    "LblStaff": "Staff",
+    "LblDepartment": "Department"
+  },
+  "Header": {
+    "Dashboard": "Dashboard",
+    "Staff": "Staff",
+    "Department": "Department",
+    "Project": "Project",
+    "Profile": "Profile",
+    "Role": "Role",
+    "Layout": "Layout",
+    "ChangePassword": "Change password",
+    "Logout": "Logout",
+    "Account": {
+      "Title": "Management",
+      "Activation": "Activation",
+      "Register": "Account"
+    },
+    "Skill": "Skill",
+    "Devices": "Devices",
+    "DeviceTypes": "Device Types"
+  },
+  "ExportHeader": {
+    "Id": "Employee code",
+    "FirstName": "Last name",
+    "LastName": "Name",
+    "DateOfBirth": "Date of Birth",
+    "Sex": "Sex",
+    "Address": "Address",
+    "Email": "Email",
+    "Phone": "Phone",
+    "ContractDate": "Contract date",
+    "Department": "Department",
+    "Position": "Position"
+  },
+  "Register": {
+    "Title": "Create New Account",
+    "Role": "Role",
+    "Username": "Username",
+    "Staff": "Staff",
+    "LoginUser": "Login User",
+    "Password": "Password",
+    "ConfirmPassword": "Confirm Password",
+    "BtnRegis": "Save",
+    "LblCopyright": "Copyright 2021",
+    "ErrorModalTitle": "Create error",
+    "SuccessModalTitle": "Create success",
+    "Message": {
+      "UsernameRequired": "Username is required",
+      "StaffRequired": "Choose staff",
+      "RoleRequired": "Role is required",
+      "PasswordRequired": "Password is required",
+      "PasswordNotMatch": "Both passwords do not match",
+      "CreateSuccess": "Create account success",
+      "CreateFail": "Account already exists, please choose another",
+      "PasswordMinLength": "Enter at least 8 characters",
+      "PasswordMaxLength": "Enter up to 50 characters"
+    }
+  },
+  "ChangePassword": {
+    "Title": "Change Password",
+    "OldPassword": "Old password",
+    "NewPassword": "New password",
+    "ConfirmPassword": "Confirm password",
+    "btnCancel": "Cancel",
+    "btnDone": "Done",
+    "Message": {
+      "OldPasswordRequired": "Old password is required",
+      "NewPasswordRequired": "New password is required and has 8 characters or more",
+      "ConfirmPasswordRequired": "Confirm Password is required",
+      "PasswordNotMatch": "Both passwords do not match",
+      "ChangePasswordError": "Old password is incorrect!",
+      "ChangePasswordSuccess": "Change password is success!"
+    }
+  },
+  "StaffInformation": {
+    "Title": "User Information",
+    "Skill": "Skill",
+    "Edit": "Edit",
+    "Id": "Employee Code:",
+    "FullName": "Full Name:",
+    "Sex": "Sex:",
+    "DateOfBirth": "Date of Birth:",
+    "PersonalId": "Personal Id:",
+    "Address": "Address:",
+    "Email": "Email:",
+    "Phone": "Phone:",
+    "ContractDate": "Contract date:",
+    "Department": "Department:",
+    "Position": "Position:",
+    "btnBack": "Back",
+    "lblMonths": "months"
+  },
+  "Staff-up": {
+    "Title": "Edit Staff",
+    "UpdateSuccess": "Success",
+    "UpdateFailed": "Failed",
+    "ContentUpdateSuccess": "Update Success!",
+    "ContentUpdateFailed": "Update Failed!",
+    "btnUpload": "UPLOAD",
+    "FirstName": "First name",
+    "DateOfBirth": "Date of birth",
+    "PersonalId": "Personal Id",
+    "Address": "Address",
+    "Phone": "Phone",
+    "ContractDate": "Contract Date",
+    "Department": "Department",
+    "LastName": "Last name",
+    "Sex": "Sex",
+    "Male": "Male",
+    "Female": "Female",
+    "Email": "Email",
+    "Position": "Position",
+    "btnSave": "Save",
+    "btnCancel": "Cancel",
+    "btnBack": "Back",
+    "Message": {
+      "FirstNameRequired": "First name is required!",
+      "LastNameRequired": "Last name is required!",
+      "DateOfBirthRequired": "Date of birth is required!",
+      "SexisRequired": "Sex is required!",
+      "PersonalIdRequired": "Personal Id is required!",
+      "AddressRequired": "Address is required!",
+      "EmailRequired": "Email is required!",
+      "PhoneRequired": "Phone is required!",
+      "ContractDateRequired": "Contract Date is required!",
+      "DepartmentRequired": "Department is required!",
+      "PositionRequired": "Position is required!",
+      "SexValid": "Sex not invalid!",
+      "DateOfBirthValid": "Date of birth not invalid!",
+      "PersonalIdValid": "Personal Id not invalid!",
+      "EmailValid": "Email not invalid!",
+      "PhoneValid": "Phone not invalid!",
+      "ContractDateValid": "Contract Date not invalid!",
+      "DepartmentValid": "Department not invalid!",
+      "PositionValid": "Position not invalid!"
+    }
+  },
+  "StaffRegister": {
+    "Title": "Create Staff",
+    "Avatar": "User Avatar",
+    "SelectImage": "Select Image",
+    "FirstName": "First Name (*)",
+    "LastName": "Last Name (*)",
+    "DateOfBirth": "Date Of Birth (*)",
+    "Sex": "Sex (*)",
+    "Address": "Address",
+    "PersonalEmail": "Personal Email (*)",
+    "Phone": "Phone Number",
+    "Id": "Staff Code (*)",
+    "ContractDate": "Contract Date",
+    "Department": "Department",
+    "Position": "Position",
+    "personalId": "Personal Id",
+    "Save": "Save",
+    "Clear": "Clear",
+    "Back": "Cancel",
+    "Message": {
+      "Success": "Register success!",
+      "Failed": "Register failed!",
+      "FailIdExist": "Staff Code have been existed!",
+      "FailCompanyEmailExist": "Company email have been existed!",
+      "Error": "System Error!",
+      "ValidRequired": "Required",
+      "ValidPhoneNumber": "Enter the correct phone number format",
+      "ValidEmail": "Enter the correct email format",
+      "ValidNumber": "Enter the number",
+      "ValidIdPerson": "Enter the correct Id Person format",
+      "ValidDateValue": "Date value is not valid"
+    },
+    "SexValue": {
+      "Male": "MALE",
+      "Female": "FEMALE"
+    }
+  },
+  "Modal": {
+    "Title": {
+      "Error": "Error",
+      "Success": "Success",
+      "Confirm": "Confirm",
+      "Warning": "Warning"
+    },
+    "Message": {
+      "SessionExp": "Session has expired. Please try login again!",
+      "ConfirmDel": "Do you want to delete this data ?"
+    },
+    "Action": {
+      "Ok": "OK",
+      "Cancel": "Cancel"
+    }
+  },
+  "StaffList": {
+    "ScreenName": "Staff Management",
+    "SearchPanel": "Search",
+    "txtName": "User name:",
+    "btnSearch": "Search",
+    "btnClear": "Clear",
+    "Name": "Name",
+    "DateOfBirth": "Dob",
+    "Sex": "Sex",
+    "Address": "Address",
+    "PersonalEmail": "Personal Email",
+    "Phone": "Phone",
+    "Id": "Staff Code",
+    "ContractDate": "Contract Date",
+    "Department": "Department",
+    "Position": "Position",
+    "personalId": "Personal Id",
+    "Action": "Action",
+    "Select": "--Select--",
+    "placeholderInput": "Search name...",
+    "Message": {
+      "Success": "Staff have been deleted successfully.",
+      "Warning1": "Please select the line you want to delete.",
+      "Warning2": "Exist staff is the leader."
+    }
+  },
+  "Tooltip": {
+    "tipRegister": "Register staff",
+    "tipDelete": "Delete staff",
+    "tipEdit": "Edit staff",
+    "tipView": "View detail staff",
+    "tipPanelSearchShow": "Click to expand the search panel",
+    "tipAddDepartment": "Add Department",
+    "tipEditDepartment": "Edit Department",
+    "tipDeleteDepartment": "Delete Department"
+  },
+  "pagination": {
+    "Previous": "Previous",
+    "Next": "Next"
+  },
+  "Search": {
+    "Advanced": "ADVANCED",
+    "Search": "Search..."
+  },
+  "Department": {
+    "Title": "Departments",
+    "ID": "ID",
+    "Name": "Department",
+    "Leader": "Leader",
+    "Action": "Action",
+    "ConfirmDel": "Do you want to delete this department?",
+    "SuccessDel": "Department deleted.",
+    "ErrorDel": "Department can't delete.",
+    "ErrorExistStaff": "Can't delete this department. This department has staff exist",
+    "placeholderInput": "Search name..."
+  },
+  "DepartmentAdd": {
+    "Title": "Create Department",
+    "DepartmentName": "Department Name",
+    "DepartmentLead": "Department Lead",
+    "ParentDepartment": "Parent Department",
+    "Create": "Create",
+    "BtnCancel": "Cancel",
+    "NameValidate": "Department Name is required!",
+    "AddSuccess": "Department added.",
+    "AddFail": "Error. Department exist!"
+  },
+  "DepartmentEdit": {
+    "Title": "Edit Department",
+    "DepartmentName": "Department Name",
+    "DepartmentLead": "Department Lead",
+    "ParentDepartment": "Parent Department",
+    "Save": "Save",
+    "BtnCancel": "Cancel",
+    "NameValidate": "Department Name is required!",
+    "UpdateSuccess": "Update department successful.",
+    "UpdateFail": "Error. Update department unsuccessful!",
+    "EditFail": "Error. Department Name has exist!"
+  },
+  "ModalConfirm": {
+    "Ok": "OK",
+    "Cancel": "Cancel"
+  }
+}
