@@ -31,8 +31,8 @@
               <option *ngFor="let depart of lstDepartment;" value="{{depart.id}}">{{depart.name}}</option>
             </select>
           </div>
-          <div class="row">
-            <div class="col float-right">
+          <div class="row float-right">
+            <div class="col">
               <button type="submit" class="btn btn-primary">{{'DepartmentEdit.Save' | translate}}</button>
               <button class="btn btn-outline-secondary ml-2" (click)="onback($event)">{{'DepartmentEdit.BtnCancel' | translate}}</button>
             </div>
