@@ -17,7 +17,7 @@ export class NavigationComponent {
   account: any;
 
   displayNav = {
-    Dashboard: false,
+    Dashboard: true,
     Staff: false,
     Department: false,
     Account: false

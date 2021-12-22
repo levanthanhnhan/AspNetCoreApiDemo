@@ -1,0 +1,46 @@
+<div class="container">
+  <div>
+    <div style="width: 100%;">
+      <div class="row">
+        <h2>Account List</h2>
+      </div>
+      <div class="clearfix">
+        <div class="float-right mg-bot-15">
+          <ng-template #tipRegister><b>{{'Tooltip.tipAddDepartment' | translate}}</b></ng-template>
+          <a class="ml-10" [routerLink]="['/Account/Register']"><img src="../assets/images/add.png" width="40" height="40" [ngbTooltip]="tipRegister" /></a>
+        </div>
+      </div>
+      <div class="overflow-x">
+        <table class="table table-striped table-bordered table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th>UserName</th>
+              <th>Password</th>
+              <th>Email</th>
+              <th>StaffName</th>
+              <th>RoleName</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let account of listAccounts | paginate: { itemsPerPage: pageCount, currentPage: p }">
+              <td>{{account.userName}}</td>
+              <td>{{account.password}}</td>
+              <td>{{account.email}}</td>
+              <td>{{account.staffName}}</td>
+              <td>{{account.roleName}}</td>
+              <td>
+                <ng-template #tipEdit><b>{{'Tooltip.tipEditDepartment' | translate}}</b></ng-template>
+                <a class="mr-10" [routerLink]="['/Account/' , account.userName, 'Edit']" routerLinkActive="router-link-active"><img src="../assets/images/edit.png" width="30" height="30" [ngbTooltip]="tipEdit" /></a>
+                <ng-template #tipDelete><b>{{'Tooltip.tipDeleteDepartment' | translate}}</b></ng-template>
+                <a class="mr-10" (click)="onDelete(account.userName)"><img src="../assets/images/delete.png" width="30" height="30" [ngbTooltip]="tipDelete" /></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pagination-controls autoHide="true" previousLabel="{{'pagination.Previous' | translate}}" nextLabel="{{'pagination.Next' | translate}}" (pageChange)="p = $event"></pagination-controls>

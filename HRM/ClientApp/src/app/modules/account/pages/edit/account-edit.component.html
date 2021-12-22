@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 main-form">
-      <h1>{{'Register.Title' | translate}}</h1>
+      <h1>Edit Account</h1>
       <div class="col-md-12">
         <form id="registerForm" method="post" [formGroup]="regisForm" (ngSubmit)="onSubmit()">
           <hr>
@@ -12,16 +12,16 @@
           </div>
           <div class="form-group mb-30">
             <p class="text-font">{{'Register.Username' | translate}}</p>
-            <input class="form-control" id="Input_Username" type="text" formControlName="username" [ngClass]="{ 'is-invalid': submitted && regisData.username.errors }">
+            <input [ngModel]="account.userName" class="form-control" id="Input_Username" type="text" formControlName="username" [ngClass]="{ 'is-invalid': submitted && regisData.username.errors }">
             <div *ngIf="submitted && regisData.username.errors" class="alert-danger-text">
               <span *ngIf="regisData.username.errors.required">{{'Register.Message.UsernameRequired' | translate}}</span>
             </div>
           </div>
           <div class="form-group mb-30">
             <p class="text-font">{{'Register.Staff' | translate}}</p>
-            <select class="form-control" id="Input_Staff" formControlName="staff" [(ngModel)]="selected" [ngClass]="{ 'is-invalid': submitted && regisData.staff.errors }">
-              <option *ngFor="let staff of lstStaff;" [ngValue]="staff">
-                {{staff.id}} . {{staff.lastName}} {{staff.firstName}}
+            <select [ngModel]="account.staffId" class="form-control" id="Input_Staff" formControlName="staff" [ngClass]="{ 'is-invalid': submitted && regisData.staff.errors }">
+              <option *ngFor="let staff of lstStaff;" [ngValue]="staff.id">
+                {{staff.lastName}} {{staff.firstName}}
               </option>
             </select>
             <div *ngIf="submitted && regisData.staff.errors" class="alert-danger-text">
@@ -30,7 +30,7 @@
           </div>
           <div class="form-group mb-30">
             <p class="text-font">{{'Register.Role' | translate}}</p>
-            <select class="form-control" id="Input_Role" formControlName="role" [ngClass]="{ 'is-invalid': submitted && regisData.role.errors }">
+            <select [ngModel]="account.roleId" class="form-control" id="Input_Role" formControlName="role" [ngClass]="{ 'is-invalid': submitted && regisData.role.errors }">
               <option *ngFor="let role of lstRole; let i = index" [ngValue]="role.id" [attr.selected]='i==0?"selected":null'>
                 {{role.name}}
               </option>
@@ -41,7 +41,7 @@
           </div>
           <div class="form-group mb-30">
             <p class="text-font">{{'Register.Password' | translate}}</p>
-            <input class="form-control" type="password" id="Input_Password" maxlength="100" formControlName="password" [ngClass]="{ 'is-invalid': submitted && regisData.password.errors }">
+            <input [ngModel]="account.password" class="form-control" type="password" id="Input_Password" maxlength="100" formControlName="password" [ngClass]="{ 'is-invalid': submitted && regisData.password.errors }">
             <div *ngIf="submitted && regisData.password.errors" class="alert-danger-text">
               <span *ngIf="regisData.password.errors.required">{{'Register.Message.PasswordRequired' | translate}}</span>
               <span *ngIf="regisData.password.errors.minlength">{{'Register.Message.PasswordMinLength' | translate}}</span>
@@ -58,7 +58,12 @@
               <span *ngIf="regisData.confirmPassword.errors.maxlength">{{'Register.Message.PasswordMaxLength' | translate}}</span>
             </div>
           </div>
-          <button id="registerSubmit" type="submit" class="btn btn-primary float-right">{{'Register.BtnRegis' | translate}}</button>
+          <div class="row float-right">
+            <div class="col">
+              <button id="registerSubmit" type="submit" class="btn btn-primary">{{'Register.BtnRegis' | translate}}</button>
+              <button class="btn btn-outline-secondary ml-2" (click)="onback()">{{'DepartmentEdit.BtnCancel' | translate}}</button>
+            </div>
+          </div>
         </form>
       </div>
     </div>

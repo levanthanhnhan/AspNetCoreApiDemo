@@ -30,7 +30,7 @@ namespace HRM.Services
         public Account Login(string userName, string password)
         {
             AccountService accountService = new AccountService(_config);
-            return accountService.GetAccounts().SingleOrDefault(account => account.UserName == userName && account.Password == password);
+            return accountService.GetAccounts().SingleOrDefault(account => account.UserName == userName && account.Password == DBUtils.EncryptPassword(password));
         }
 
         /// <summary>

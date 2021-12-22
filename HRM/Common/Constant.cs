@@ -13,6 +13,7 @@ namespace HRM.Common
         public const string DATETIME_DEFAULT_VALUE = "1900-01-01";
         public const string DATETIME_FORMAT = "yyyy-MM-dd";
         public const int ITEM_PER_PAGE = 10;
+        public const string ENCRYPT_PASSWORD_KEY = "ENCRYPTPASSWORDKEY";
 
         public struct ACCOUNT_ACTIVATION
         {

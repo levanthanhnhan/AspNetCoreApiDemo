@@ -15,7 +15,7 @@
           <a class="nav-link" href="#" [routerLink]="['/Department/List']">{{'Header.Department' | translate}}</a>
         </li>
         <li class="nav-item" [hidden]="!displayNav.Account">
-          <a class="nav-link" href="#" [routerLink]="['/Account/Register']">{{'Header.Account.Register' | translate}}</a>
+          <a class="nav-link" href="#" [routerLink]="['/Account/List']">{{'Header.Account.Register' | translate}}</a>
         </li>
       </ul>
 
@@ -25,7 +25,7 @@
             <label class="form-check-label mg-bold">{{account.userName}}</label>
           </a>
           <div class="dropdown-menu dropdown-menu-md-right shadow" aria-labelledby="bd-versions">
-            <a class="dropdown-item" [routerLink]="['/Staff/', account.userId, 'Detail']">{{'Header.Profile' | translate}}</a>
+            <a [hidden]="account.userId == -1" class="dropdown-item" [routerLink]="['/Staff/', account.userId, 'Detail']">{{'Header.Profile' | translate}}</a>
             <a class="dropdown-item" (click)="changePassword()">{{'Header.ChangePassword' | translate}}</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" (click)="logout()">{{'Header.Logout' | translate}}</a>

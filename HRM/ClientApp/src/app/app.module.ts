@@ -29,7 +29,7 @@ import { NavigationComponent } from './header/navigation/navigation.component';
 import { LanguageComponent } from './header/language/language.component';
 import { DepartmentChartComponent } from './modules/dashboard/components/department-chart/department-chart.component';
 import { ProjectChartComponent } from './modules/dashboard/components/project-chart/project-chart.component';
-import { RegisterComponent } from './modules/account/pages/register/register.component';
+import { AccountRegisterComponent } from './modules/account/pages/register/account-register.component';
 import { ModalSuccessComponent } from './common/modals/success/modal-success.component';
 import { StaffEditComponent } from './modules/staff/pages/staff-edit/staff-edit.component';
 import { StaffInformationComponent } from './modules/staff/pages/staff_infomation/staff-information.component';
@@ -50,6 +50,9 @@ import { DepartmentRegistComponent } from './modules/department/pages/department
 import { DepartmentListComponent } from './modules/department/pages/department-list/department-list.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import * as $ from 'jquery';
+import { AccountComponent } from './modules/account/pages/account/account.component';
+import { AccountListComponent } from './modules/account/pages/list/account-list.component';
+import { AccountEditComponent } from './modules/account/pages/edit/account-edit.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -104,7 +107,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     LanguageComponent,
     DepartmentChartComponent,
     ProjectChartComponent,
-    RegisterComponent,
+    AccountComponent,
+    AccountListComponent,
+    AccountEditComponent,
+    AccountRegisterComponent,
     ModalSuccessComponent,
     StaffInformationComponent,
     StaffRegisterComponent,

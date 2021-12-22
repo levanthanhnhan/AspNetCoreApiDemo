@@ -79,5 +79,80 @@ namespace HRM.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Authorize]
+        [Route("GetAccountList")]
+        public ActionResult GetAccountList()
+        {
+            AccountService accoutService = new AccountService(_config);
+            try
+            {
+                List<Account> listAccounts = accoutService.GetAccountList();
+
+                var objResult = new
+                {
+                    listAccounts = listAccounts,
+                    pageCount = Constant.ITEM_PER_PAGE
+                };
+
+                return Ok(objResult);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("{userName}")]
+        [Authorize]
+        [Route("GetAccountByUserName")]
+        public ActionResult GetAccountByUserName(string userName)
+        {
+            AccountService accoutService = new AccountService(_config);
+            try
+            {
+                Account account = accoutService.FindAccountByUserName(userName);
+                account.Password = DBUtils.DecryptPassword(account.Password);
+
+                var objResult = new
+                {
+                    account = account,
+                };
+
+                return Ok(objResult);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [Authorize]
+        [Route("Delete")]
+        public ActionResult Delete([FromBody] string userName)
+        {
+            AccountService accoutService = new AccountService(_config);
+           
+            try
+            {
+                accoutService.DeleteAccount(userName);
+                return Ok(new { statusCode = 1, message = "Delete Successfully!" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

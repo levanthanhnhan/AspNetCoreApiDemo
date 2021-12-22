@@ -10,20 +10,22 @@ import { AccountModel } from "../../../login/models/account-model";
 import { ComparePassword } from "../../services/customvalidator.validator";
 import { TranslateService } from "@ngx-translate/core";
 import { ModalService } from '../../../../common/services/modal.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-account-edit',
+  templateUrl: './account-edit.component.html',
+  styleUrls: ['./account-edit.component.scss']
 })
-export class RegisterComponent implements OnInit {
+
+export class AccountEditComponent{
   regisForm: FormGroup;
   lstStaff: any;
   lstRole: any;
   submitted = false;
   selected = null;
   status: any;
+  account: any;
 
   constructor(
     private networkService: NetworkingService,
@@ -32,6 +34,7 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private _http: HttpClient,
     private modalService: ModalService,
+    private routerActive: ActivatedRoute,
     private router: Router,
     @Inject('BASE_URL') private _baseUrl: string) { }
 
@@ -44,10 +47,14 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(50)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(50)]]
     },
-      {
-        // Used custom form validator name
-        validator: ComparePassword("password", "confirmPassword")
-      });
+    {
+      // Used custom form validator name
+      validator: ComparePassword("password", "confirmPassword")
+    });
+
+    this.routerActive.paramMap.subscribe((params: ParamMap) => {
+      this.getAccountByUserName(params.get('id'))
+    });
   }
 
   get regisData() { return this.regisForm.controls; }
@@ -93,12 +100,24 @@ export class RegisterComponent implements OnInit {
 
       if (status == '1') {
         self.modalService.openModalSuccess(self.translate.instant('Register.SuccessModalTitle'), self.translate.instant('Register.Message.CreateSuccess'), 'OK', ok => {
-          location.reload();
+          self.router.navigateByUrl('/Account/List');
         });
       }
       else {
         self.modalService.openModalError(self.translate.instant('Register.ErrorModalTitle'), self.translate.instant('Register.Message.CreateFail'), 'OK');
       }
     });
+  }
+
+  getAccountByUserName(userName) {
+    const self = this;
+
+    this.networkService.get(this._baseUrl + "api/Account/" + userName, null, function (res) {
+      self.account = res.account;
+    });
+  }
+
+  onback() {
+    this.router.navigateByUrl('/Account/List');
   }
 }

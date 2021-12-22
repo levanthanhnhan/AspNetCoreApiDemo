@@ -32,11 +32,9 @@ namespace HRM.Services
                 using (SqlCommand command = new SqlCommand(sql, conn))
                 {
                     conn.Open();
-                    command.Parameters.AddWithValue("@Password", account.Password);
+                    command.Parameters.AddWithValue("@Password", DBUtils.EncryptPassword(account.Password));
                     command.Parameters.AddWithValue("@Username", account.UserName);
                     var rows = command.ExecuteNonQuery();
-
-                    Console.WriteLine("Change password rows: " + rows);
 
                     conn.Close();
 

@@ -1,4 +1,5 @@
-﻿using HRM.Models;
+﻿using HRM.Common;
+using HRM.Models;
 using HRM.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
@@ -36,7 +37,7 @@ namespace HRM.Controllers
             string currentPassword = staffChangePasswordService.CheckPassword(account);
             string msg = string.Empty;
 
-            if (currentPassword == account.OldPassword)
+            if (currentPassword == DBUtils.EncryptPassword(account.OldPassword))
             {
                 int result = staffChangePasswordService.ChangePassword(account);
 

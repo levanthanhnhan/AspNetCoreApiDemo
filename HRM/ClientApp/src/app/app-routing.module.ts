@@ -4,7 +4,7 @@ import { LoginComponent } from './modules/login/pages/login.component';
 import { HomeComponent } from './modules/home/home.component';
 import { DashboardComponent } from './modules/dashboard/pages/dashboard.component';
 import { StaffComponent } from './modules/staff/pages/staff/staff.component';
-import { RegisterComponent } from './modules/account/pages/register/register.component';
+import { AccountRegisterComponent } from './modules/account/pages/register/account-register.component';
 import { StaffEditComponent } from './modules/staff/pages/staff-edit/staff-edit.component';
 import { StaffInformationComponent } from './modules/staff/pages/staff_infomation/staff-information.component';
 import { StaffRegisterComponent } from './modules/staff/pages/staff-register/staff-register.component';
@@ -13,6 +13,9 @@ import { DepartmentComponent } from './modules/department/pages/department/depar
 import { DepartmentEditComponent } from './modules/department/pages/department-edit/department-edit.component';
 import { DepartmentRegistComponent } from './modules/department/pages/department-regist/department-regist.component';
 import { DepartmentListComponent } from './modules/department/pages/department-list/department-list.component';
+import { AccountListComponent } from './modules/account/pages/list/account-list.component';
+import { AccountComponent } from './modules/account/pages/account/account.component';
+import { AccountEditComponent } from './modules/account/pages/edit/account-edit.component';
 
 
 const routes: Routes = [
@@ -51,8 +54,22 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'Account/Register',
-        component: RegisterComponent,
+        path: 'Account',
+        component: AccountComponent,
+        children: [
+          {
+            path: 'List',
+            component: AccountListComponent,
+          },
+          {
+            path: ':id/Edit',
+            component: AccountEditComponent,
+          },
+          {
+            path: 'Register',
+            component: AccountRegisterComponent,
+          }
+        ]
       },
       {
         path: 'Department',

@@ -51,9 +51,6 @@ export class StaffInformationComponent implements OnInit, AfterViewInit {
     const self = this;
     this.networking.get(this._baseUrl + "api/Staff/StaffInfoById/" + id, null, function (res) {
       self.staff = res;
-      if (self.staff.imageLink === undefined || self.staff.imageLink == "") {
-        self.staff.imageLink = "./assets/images/staff_default.png";
-      }
     });
   }
 

@@ -93,7 +93,7 @@ namespace HRM.Services
                 {
                     updateCommand.Parameters.Add("@USERNAME", SqlDbType.NVarChar).Value = account.UserName;
                     updateCommand.Parameters.Add("@EMAIL", SqlDbType.NVarChar).Value = account.Email;
-                    updateCommand.Parameters.Add("@PASSWORD", SqlDbType.NVarChar).Value = account.Password;
+                    updateCommand.Parameters.Add("@PASSWORD", SqlDbType.NVarChar).Value = DBUtils.EncryptPassword(account.Password);
                     updateCommand.Parameters.Add("@STAFFID", SqlDbType.Int).Value = account.StaffId;
                     updateCommand.Parameters.Add("@ROLEID", SqlDbType.Int).Value = account.RoleId;
                     updateCommand.Parameters.Add("@CREATEDATE", SqlDbType.DateTime).Value = DateTime.Now;
@@ -155,7 +155,7 @@ namespace HRM.Services
                 {
                     updateCommand.Parameters.Add("@USERNAME", SqlDbType.NVarChar).Value = newAccount.UserName;
                     updateCommand.Parameters.Add("@EMAIL", SqlDbType.NVarChar).Value = newAccount.Email;
-                    updateCommand.Parameters.Add("@PASSWORD", SqlDbType.NVarChar).Value = newAccount.Password;
+                    updateCommand.Parameters.Add("@PASSWORD", SqlDbType.NVarChar).Value = DBUtils.EncryptPassword(newAccount.Password);
                     updateCommand.Parameters.Add("@STAFFID", SqlDbType.Int).Value = newAccount.StaffId;
                     updateCommand.Parameters.Add("@ROLEID", SqlDbType.Int).Value = newAccount.RoleId;
                     updateCommand.Parameters.Add("@CREATEDATE", SqlDbType.DateTime).Value = DateTime.Now;
@@ -183,6 +183,83 @@ namespace HRM.Services
         public Account FindAccountByUserName(string userName)
         {
             return GetAccounts().SingleOrDefault(account => account.UserName == userName);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<Account> GetAccountList()
+        {
+            List<Account> listAccount = new List<Account>();
+
+            string sql = "SELECT Account.*, CONCAT(Staff.LastName, ' ', Staff.FirstName) AS StaffName, Role.Name AS RoleName ";
+            sql += "FROM Account ";
+            sql += "LEFT JOIN Staff ON  Account.StaffId = Staff.Id ";
+            sql += "LEFT JOIN Role ON Account.RoleId = Role.Id ";
+            sql += "ORDER BY Staff.Id ASC";
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    conn.Open();
+
+                    var reader = command.ExecuteReader(CommandBehavior.CloseConnection);
+
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            Account account = new Account();
+                            account.UserName = DBUtils.GetString(reader, "UserName").Trim();
+                            account.Password = DBUtils.DecryptPassword(DBUtils.GetString(reader, "Password").Trim());
+                            account.StaffId = DBUtils.GetInt(reader, "StaffId");
+                            account.StaffName = DBUtils.GetString(reader, "StaffName");
+                            account.RoleId = DBUtils.GetInt(reader, "RoleId");
+                            account.RoleName = DBUtils.GetString(reader, "RoleName");
+                            account.Email = DBUtils.GetString(reader, "Email").Trim();
+                            account.CreateDate = DBUtils.GetDateTime(reader, "CreateDate");
+                            account.UpdateDate = DBUtils.GetDateTime(reader, "UpdateDate");
+                            account.RefreshToken = DBUtils.GetString(reader, "RefreshToken");
+                            account.TokenExpired = DBUtils.GetDateTime(reader, "TokenExpired");
+
+                            listAccount.Add(account);
+                        }
+                    }
+                }
+            }
+
+            return listAccount;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        public int DeleteAccount(string userName)
+        {
+            int result = 0;
+            string sql = "DELETE Account WHERE UserName = @userName";
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.Add("@userName", SqlDbType.NVarChar).Value = userName;
+                    try
+                    {
+                        conn.Open();
+                        result = cmd.ExecuteNonQuery();
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+            }
+            return result;
         }
     }
 }
