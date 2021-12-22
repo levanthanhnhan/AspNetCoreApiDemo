@@ -30,9 +30,7 @@ export class AccountEditComponent{
   constructor(
     private networkService: NetworkingService,
     private translate: TranslateService,
-    private _loginService: LoginService,
     private formBuilder: FormBuilder,
-    private _http: HttpClient,
     private modalService: ModalService,
     private routerActive: ActivatedRoute,
     private router: Router,
@@ -65,46 +63,38 @@ export class AccountEditComponent{
       return;
     }
 
-    var staff = this.regisForm.get("staff").value;
     let reqUserObj = new AccountModel();
     reqUserObj.username = this.regisForm.get("username").value;
     reqUserObj.email = this.regisForm.get("username").value + "@company.com";
     reqUserObj.roleId = Number(this.regisForm.get("role").value);
     reqUserObj.password = this.regisForm.get("password").value;
-    reqUserObj.staffId = staff.id;
+    reqUserObj.staffId = this.regisForm.get("staff").value;
 
-    this.getResRegister(reqUserObj);
+    this.updateAccount(reqUserObj);
   }
 
   getAllStaff() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authorization': this._loginService.getAccessToken(),
-        'Content-Type': 'application/json; charset=utf-8'
-      })
-    };
-    return this._http.get(this._baseUrl + "api/Account", httpOptions).subscribe(
-      res => {
-        this.lstStaff = res['_listStaff'];
-        this.lstRole = res['_listRole'];
-        let iStaff = this.lstStaff.filter(staff => staff.companyEmail != "");
-        this.lstStaff = iStaff;
-      }
-    );
+    let self = this;
+    return this.networkService.get(this._baseUrl + "api/Account", null, function (res) {
+      self.lstStaff = res['_listStaff'];
+      self.lstRole = res['_listRole'];
+      let iStaff = self.lstStaff.filter(staff => staff.companyEmail != "");
+      self.lstStaff = iStaff;
+    });
   }
 
-  getResRegister(reqModal) {
+  updateAccount(reqModal) {
     let self = this;
-    this.networkService.post(this._baseUrl + "api/Account/Create", reqModal, null, function (res) {
+    this.networkService.post(this._baseUrl + "api/Account/Update", reqModal, null, function (res) {
       status = res['_statusCode'];
 
       if (status == '1') {
-        self.modalService.openModalSuccess(self.translate.instant('Register.SuccessModalTitle'), self.translate.instant('Register.Message.CreateSuccess'), 'OK', ok => {
+        self.modalService.openModalSuccess(self.translate.instant('Register.SuccessModalTitle'), self.translate.instant('AccountEdit.MsgSuccess'), 'OK', ok => {
           self.router.navigateByUrl('/Account/List');
         });
       }
       else {
-        self.modalService.openModalError(self.translate.instant('Register.ErrorModalTitle'), self.translate.instant('Register.Message.CreateFail'), 'OK');
+        self.modalService.openModalError(self.translate.instant('Register.ErrorModalTitle'), self.translate.instant('AccountEdit.MsgError'), 'OK');
       }
     });
   }

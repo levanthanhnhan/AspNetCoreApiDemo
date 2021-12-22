@@ -12,7 +12,7 @@
           </div>
           <div class="form-group mb-30">
             <p class="text-font">{{'Register.Username' | translate}}</p>
-            <input [ngModel]="account.userName" class="form-control" id="Input_Username" type="text" formControlName="username" [ngClass]="{ 'is-invalid': submitted && regisData.username.errors }">
+            <input disabled [ngModel]="account.userName" class="form-control" id="Input_Username" type="text" formControlName="username" [ngClass]="{ 'is-invalid': submitted && regisData.username.errors }">
             <div *ngIf="submitted && regisData.username.errors" class="alert-danger-text">
               <span *ngIf="regisData.username.errors.required">{{'Register.Message.UsernameRequired' | translate}}</span>
             </div>
@@ -60,7 +60,7 @@
           </div>
           <div class="row float-right">
             <div class="col">
-              <button id="registerSubmit" type="submit" class="btn btn-primary">{{'Register.BtnRegis' | translate}}</button>
+              <button type="submit" class="btn btn-primary">{{'Register.BtnRegis' | translate}}</button>
               <button class="btn btn-outline-secondary ml-2" (click)="onback()">{{'DepartmentEdit.BtnCancel' | translate}}</button>
             </div>
           </div>

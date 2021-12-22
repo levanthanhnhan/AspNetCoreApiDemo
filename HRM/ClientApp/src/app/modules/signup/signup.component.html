@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 main-form">
+      <h1>{{'Register.Title' | translate}}</h1>
+      <div class="col-md-12">
+        <form id="registerForm" method="post" [formGroup]="regisForm" (ngSubmit)="onSubmit()">
+          <hr>
+          <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
+            <ul>
+              <li style="display:none"></li>
+            </ul>
+          </div>
+          <div class="form-group mb-30">
+            <p class="text-font">{{'Register.Username' | translate}}</p>
+            <input class="form-control" id="Input_Username" type="text" formControlName="username" [ngClass]="{ 'is-invalid': submitted && regisData.username.errors }">
+            <div *ngIf="submitted && regisData.username.errors" class="alert-danger-text">
+              <span *ngIf="regisData.username.errors.required">{{'Register.Message.UsernameRequired' | translate}}</span>
+            </div>
+          </div>
+          <div class="form-group mb-30">
+            <p class="text-font">{{'Register.Password' | translate}}</p>
+            <input class="form-control" type="password" id="Input_Password" minlength="8" maxlength="50" formControlName="password" [ngClass]="{ 'is-invalid': submitted && regisData.password.errors }">
+            <div *ngIf="submitted && regisData.password.errors" class="alert-danger-text">
+              <span *ngIf="regisData.password.errors.required">{{'Register.Message.PasswordRequired' | translate}}</span>
+              <span *ngIf="regisData.password.errors.minlength">{{'Register.Message.PasswordMinLength' | translate}}</span>
+              <span *ngIf="regisData.password.errors.maxlength">{{'Register.Message.PasswordMaxLength' | translate}}</span>
+            </div>
+          </div>
+          <div class="row float-right">
+            <div class="col">
+              <button type="submit" class="btn btn-primary">{{'SignUp.BtnCreate' | translate}}</button>
+              <button class="btn btn-outline-secondary ml-2" (click)="onback()">{{'DepartmentEdit.BtnCancel' | translate}}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

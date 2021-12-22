@@ -58,7 +58,12 @@
               <span *ngIf="regisData.confirmPassword.errors.maxlength">{{'Register.Message.PasswordMaxLength' | translate}}</span>
             </div>
           </div>
-          <button id="registerSubmit" type="submit" class="btn btn-primary float-right">{{'Register.BtnRegis' | translate}}</button>
+          <div class="row float-right">
+            <div class="col">
+              <button type="submit" class="btn btn-primary">{{'Register.BtnRegis' | translate}}</button>
+              <button class="btn btn-outline-secondary ml-2" (click)="onback()">{{'DepartmentEdit.BtnCancel' | translate}}</button>
+            </div>
+          </div>
         </form>
       </div>
     </div>

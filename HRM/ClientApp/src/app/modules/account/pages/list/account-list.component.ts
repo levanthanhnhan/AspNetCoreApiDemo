@@ -11,7 +11,6 @@ import { ComparePassword } from "../../services/customvalidator.validator";
 import { TranslateService } from "@ngx-translate/core";
 import { ModalService } from '../../../../common/services/modal.service';
 import { Router } from '@angular/router';
-import { Account } from '../models/account-model';
 
 @Component({
   selector: 'app-account-list',
@@ -45,20 +44,18 @@ export class AccountListComponent implements OnInit {
   }
 
   onDelete(userName) {
-    this.modalService.openModalConfirm(this.translate.instant('Modal.Title.Confirm'), this.translate.instant('Department.ConfirmDel'),
+    this.modalService.openModalConfirm(this.translate.instant('Modal.Title.Confirm'), this.translate.instant('AccountDelete.MsgConfirm'),
       Ok => {
         this.networkSevice.post<any>(this._baseUrl + "api/Account/Delete", JSON.stringify(userName), null,
           res => {
             if (res.statusCode == 1) {
-              this.modalService.openModalSuccess(this.translate.instant('Modal.Title.Success'), this.translate.instant('Department.SuccessDel'), "OK", Ok => {
+              this.modalService.openModalSuccess(this.translate.instant('Modal.Title.Success'), this.translate.instant('AccountDelete.MsgSuccess'), "OK", Ok => {
                 this.ngOnInit();
               });
-            } else {
-              this.modalService.openModalError(this.translate.instant('Modal.Title.Error'), this.translate.instant('Department.ErrorExistStaff'), "OK");
             }
           },
           err => {
-            this.modalService.openModalError(this.translate.instant('Modal.Title.Error'), this.translate.instant('Department.ErrorDel'), "OK");
+            this.modalService.openModalError(this.translate.instant('Modal.Title.Error'), this.translate.instant('AccountDelete.MsgError'), "OK");
           });
       });
   }

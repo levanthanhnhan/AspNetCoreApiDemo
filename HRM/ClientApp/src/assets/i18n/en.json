@@ -73,7 +73,7 @@
     "Position": "Position"
   },
   "Register": {
-    "Title": "Create New Account",
+    "Title": "Create account",
     "Role": "Role",
     "Username": "Username",
     "Staff": "Staff",
@@ -310,5 +310,32 @@
   "ModalConfirm": {
     "Ok": "OK",
     "Cancel": "Cancel"
+  },
+  "AccountList": {
+    "Title": "Account List",
+    "UserName": "UserName",
+    "Password": "Password",
+    "Email": "Email Company",
+    "StaffName": "Staff",
+    "RoleName": "Role",
+    "Action": "Action",
+    "BtnAdd": "Create",
+    "BtnEdit": "Edit",
+    "BtnDelete": "Delete"
+  },
+  "AccountEdit": {
+    "Title": "Edit Account",
+    "MsgSuccess": "Update Success",
+    "MsgError": "Update Failed"
+  },
+  "AccountDelete": {
+    "MsgConfirm": "Do you want to delete this account?",
+    "MsgSuccess": "Delete Success",
+    "MsgError": "Delete Failed"
+  },
+  "SignUp": {
+    "Title": "Create account",
+    "BtnSignUpLogin": "Register account",
+    "BtnCreate": "Register"
   }
 }

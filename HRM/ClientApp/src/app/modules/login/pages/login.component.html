@@ -45,6 +45,9 @@
             <div [hidden]="!isShowLoginError" class="alert-danger alert mt-20">
               <span>{{'Login.Message.UsernamePasswordWrong' | translate}}</span>
             </div>
+
+            <!-- Register Account -->
+            <p class="mb-3 text-muted link" [routerLink]="['/SignUp']">{{'SignUp.BtnSignUpLogin' | translate}}</p>
           </form>
 
           <!-- Copyright -->

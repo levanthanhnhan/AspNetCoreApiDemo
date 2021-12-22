@@ -53,6 +53,7 @@ import * as $ from 'jquery';
 import { AccountComponent } from './modules/account/pages/account/account.component';
 import { AccountListComponent } from './modules/account/pages/list/account-list.component';
 import { AccountEditComponent } from './modules/account/pages/edit/account-edit.component';
+import { SignUpComponent } from './modules/signup/signup.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -122,6 +123,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     DepartmentEditComponent,
     DepartmentRegistComponent,
     DepartmentListComponent,
+    SignUpComponent
   ],
   entryComponents: [
     ModalErrorComponent,

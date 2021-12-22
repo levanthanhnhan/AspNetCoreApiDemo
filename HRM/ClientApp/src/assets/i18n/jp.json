@@ -312,5 +312,31 @@
   "ModalConfirm": {
     "Ok": "同意",
     "Cancel": "キャンセル"
+  },
+  "AccountList": {
+    "Title": "アカウントリスト",
+    "UserName": "ユーザー名",
+    "Password": "パスワード",
+    "Email": "メール会社",
+    "StaffName": "スタッフ",
+    "RoleName": "編集",
+    "Action": "アクション",
+    "BtnAdd": "作成",
+    "BtnEdit": "編集",
+    "BtnDelete": "削除"
+  },
+  "AccountEdit": {
+    "Title": "アカウントの編集",
+    "MsgSuccess": "更新成功",
+    "MsgError": "更新に失敗しました"
+  },
+  "AccountDelete": {
+    "MsgConfirm": "このアカウントを削除しますか？ ",
+    "MsgSuccess": "削除成功",
+    "MsgError": "削除に失敗しました"
+  },
+  "SignUp": {
+    "Title": "アカウントを作成する ",
+    "BtnSignUpLogin": "アカウントを作成する"
   }
 }

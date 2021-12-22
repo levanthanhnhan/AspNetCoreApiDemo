@@ -313,5 +313,31 @@
   "ModalConfirm": {
     "Ok": "Đồng ý",
     "Cancel": "Hủy"
+  },
+  "AccountList": {
+    "Title": "Danh sách tài khoản",
+    "UserName": "Tên tài khoản",
+    "Password": "Mật khẩu",
+    "Email": "Email",
+    "StaffName": "Nhân viên",
+    "RoleName": "Quyền",
+    "Action": "Action",
+    "BtnAdd": "Thêm mới",
+    "BtnEdit": "Chỉnh sửa",
+    "BtnDelete": "Xóa"
+  },
+  "AccountEdit": {
+    "Title": "Chỉnh sửa tài khoản",
+    "MsgSuccess": "Chỉnh sửa thành công",
+    "MsgError": "Chỉnh sửa thất bại"
+  },
+  "AccountDelete": {
+    "MsgConfirm": "Bạn có muốn xóa tài khoản này?",
+    "MsgSuccess": "Xóa tài khoản thành công",
+    "MsgError": "Xóa tài khoản thất bại"
+  },
+  "SignUp": {
+    "Title": "Đăng kí tài khoản",
+    "BtnSignUpLogin": "Đăng kí tài khoản"
   }
 }

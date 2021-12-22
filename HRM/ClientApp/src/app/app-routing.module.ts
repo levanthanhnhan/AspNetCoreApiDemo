@@ -16,12 +16,17 @@ import { DepartmentListComponent } from './modules/department/pages/department-l
 import { AccountListComponent } from './modules/account/pages/list/account-list.component';
 import { AccountComponent } from './modules/account/pages/account/account.component';
 import { AccountEditComponent } from './modules/account/pages/edit/account-edit.component';
+import { SignUpComponent } from './modules/signup/signup.component';
 
 
 const routes: Routes = [
   {
     path: 'Login',
     component: LoginComponent,
+  },
+  {
+    path: 'SignUp',
+    component: SignUpComponent,
   },
   {
     path: '',

@@ -1,10 +1,5 @@
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl, NgForm } from "@angular/forms";
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { LoginService } from "../../../login/services/login.service";
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ModalErrorComponent } from '../../../../common/modals/error/modal-error.component';
-import { ModalSuccessComponent } from '../../../../common/modals/success/modal-success.component';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { NetworkingService } from '../../../../common/services/networking.service';
 import { AccountModel } from "../../../login/models/account-model";
 import { ComparePassword } from "../../services/customvalidator.validator";
@@ -28,9 +23,7 @@ export class AccountRegisterComponent implements OnInit {
   constructor(
     private networkService: NetworkingService,
     private translate: TranslateService,
-    private _loginService: LoginService,
     private formBuilder: FormBuilder,
-    private _http: HttpClient,
     private modalService: ModalService,
     private router: Router,
     @Inject('BASE_URL') private _baseUrl: string) { }
@@ -70,20 +63,13 @@ export class AccountRegisterComponent implements OnInit {
   }
 
   getAllStaff() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Authorization': this._loginService.getAccessToken(),
-        'Content-Type': 'application/json; charset=utf-8'
-      })
-    };
-    return this._http.get(this._baseUrl + "api/Account", httpOptions).subscribe(
-      res => {
-        this.lstStaff = res['_listStaff'];
-        this.lstRole = res['_listRole'];
-        let iStaff = this.lstStaff.filter(staff => staff.companyEmail != "");
-        this.lstStaff = iStaff;
-      }
-    );
+    let self = this;
+    return this.networkService.get(this._baseUrl + "api/Account", null, function (res) {
+      self.lstStaff = res['_listStaff'];
+      self.lstRole = res['_listRole'];
+      let iStaff = self.lstStaff.filter(staff => staff.companyEmail != "");
+      this.lstStaff = iStaff;
+    });
   }
 
   getResRegister(reqModal) {
@@ -100,5 +86,9 @@ export class AccountRegisterComponent implements OnInit {
         self.modalService.openModalError(self.translate.instant('Register.ErrorModalTitle'), self.translate.instant('Register.Message.CreateFail'), 'OK');
       }
     });
+  }
+
+  onback() {
+    this.router.navigateByUrl('/Account/List');
   }
 }
