@@ -63,11 +63,11 @@
         <td>
           <div class="float-left">
             <ng-template #tipEdit><b>{{'Tooltip.tipEdit' | translate}}</b></ng-template>
-            <a (click)="editBtn()" class="mr-10" [routerLink]="['/Staff/', relationStaff.id, 'Edit']"><img src="../assets/images/edit.png" width="30" height="30" [ngbTooltip]="tipEdit" /></a>
+            <a class="mr-10" [routerLink]="['/Staff/', relationStaff.id, 'Edit']"><img src="../assets/images/edit.png" width="30" height="30" [ngbTooltip]="tipEdit" /></a>
           </div>
           <div>
             <ng-template #tipView><b>{{'Tooltip.tipView' | translate}}</b></ng-template>
-            <a (click)="detailBtn()" class="mr-10" [routerLink]="['/Staff/', relationStaff.id, 'Detail']" routerLinkActive="router-link-active"><img src="../assets/images/detail.png" width="30" height="30" [ngbTooltip]="tipView" /></a>
+            <a class="mr-10" [routerLink]="['/Staff/', relationStaff.id, 'Detail']" routerLinkActive="router-link-active"><img src="../assets/images/detail.png" width="30" height="30" [ngbTooltip]="tipView" /></a>
           </div>
         </td>
       </tr>

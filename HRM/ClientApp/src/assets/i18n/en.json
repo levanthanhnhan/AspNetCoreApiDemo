@@ -249,7 +249,7 @@
     "Select": "--Select--",
     "placeholderInput": "Search name...",
     "Message": {
-      "Success": "Staff have been deleted successfully.",
+      "Success": " staff(s) have been deleted successfully.",
       "Warning1": "Please select the line you want to delete.",
       "Warning2": "Exist staff is the leader."
     }
@@ -273,7 +273,7 @@
   },
   "Search": {
     "Advanced": "ADVANCED",
-    "Search": "Search..."
+    "Search": "Search name..."
   },
   "Department": {
     "Title": "Departments",

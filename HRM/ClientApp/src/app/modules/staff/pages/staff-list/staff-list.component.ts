@@ -43,13 +43,6 @@ export class StaffListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const self = this;
-    if (this.cookie.get("searchResult") != "") {
-      this.listRelationStaff = JSON.parse(this.cookie.get("searchResult"));
-    }
-    if (this.cookie.get("searchPageCount") != "") {
-      this.pageCount = JSON.parse(this.cookie.get("searchPageCount"));
-    }
-
     this.getData(function () {
       self.getStaff();
     });
@@ -81,8 +74,6 @@ export class StaffListComponent implements OnInit, OnDestroy {
     this.networkSevice.post(this._baseUrl + "api/Staff/GetRelationStaffs", params, null, function (res) {
       self.listRelationStaff = res.list;
       self.pageCount = res.pageCount;
-      self.cookie.set("searchResult", JSON.stringify(self.listRelationStaff), null, "/");
-      self.cookie.set("searchPageCount", JSON.stringify(self.pageCount), null, "/");
     });
   }
 
@@ -162,21 +153,5 @@ export class StaffListComponent implements OnInit, OnDestroy {
         this.checkedList.push(this.listRelationStaff[i].id);
     }
     this.checkedList = JSON.stringify(this.checkedList);
-  }
-
-  ngOnDestroy() {
-    if (!this.detailFlag) {
-      this.cookie.delete("searchSkillList","/");
-      this.cookie.delete("searchResult","/");
-      this.cookie.delete("searchPageCount","/");
-    }
-  }
-
-  detailBtn() {
-    this.detailFlag = true;
-  }
-
-  editBtn() {
-    this.detailFlag = true;
   }
 }
