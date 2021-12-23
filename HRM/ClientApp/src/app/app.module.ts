@@ -53,6 +53,7 @@ import { AccountListComponent } from './modules/account/pages/list/account-list.
 import { AccountEditComponent } from './modules/account/pages/edit/account-edit.component';
 import { SignUpComponent } from './modules/signup/signup.component';
 import { RoleComponent } from './modules/role/role.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -86,7 +87,8 @@ export function HttpLoaderFactory(http: HttpClient) {
       tertiaryColour: '#ffffff'
     }),
     BrowserAnimationsModule,
-    NgSelectModule
+    NgSelectModule,
+    MatDialogModule
   ],
 
   declarations: [
