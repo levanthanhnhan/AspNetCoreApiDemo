@@ -13,7 +13,7 @@ import { ModalService } from '../../../../common/services/modal.service';
   styleUrls: ['./staff-list.component.scss']
 })
 
-export class StaffListComponent implements OnInit, OnDestroy {
+export class StaffListComponent implements OnInit {
 
   p: number = 1;
   listStaff: any;
