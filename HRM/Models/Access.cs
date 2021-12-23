@@ -9,5 +9,7 @@ namespace HRM.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string RouterLink { get; set; }
+        public string NameTrans { get; set; }
     }
 }

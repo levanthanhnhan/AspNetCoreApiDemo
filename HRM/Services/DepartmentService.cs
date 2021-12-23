@@ -44,7 +44,7 @@ namespace HRM.Services
                         while (reader.Read())
                         {
                             Department dept = new Department();
-                            dept.ID = DBUtils.GetInt(reader, "Id");
+                            dept.Id = DBUtils.GetInt(reader, "Id");
                             dept.Name = DBUtils.GetString(reader, "Name");
                             listDept.Add(dept);
                         }
@@ -58,9 +58,9 @@ namespace HRM.Services
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<DepartmentObj> GetAllDepartment()
+        public List<Department> GetAllDepartment()
         {
-            List<DepartmentObj> listDept = new List<DepartmentObj>();
+            List<Department> listDept = new List<Department>();
 
             string sql = "SELECT * FROM Department AS DP LEFT JOIN Staff AS STF ON DP.LeaderStaffId = STF.ID";
 
@@ -76,8 +76,8 @@ namespace HRM.Services
                     {
                         while (reader.Read())
                         {
-                            DepartmentObj dept = new DepartmentObj();
-                            dept.Id = DBUtils.GetInt(reader, "ID");
+                            Department dept = new Department();
+                            dept.Id = DBUtils.GetInt(reader, "Id");
                             dept.ParentId = DBUtils.GetInt(reader, "ParentId");
                             dept.LeaderStaffId = DBUtils.GetInt(reader, "LeaderStaffId");
                             dept.Name = DBUtils.GetString(reader, "Name");
@@ -93,11 +93,11 @@ namespace HRM.Services
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="departmentID"></param>
+        /// <param name="departmentId"></param>
         /// <returns></returns>
-        public DepartmentObj GetDepartmentByID(int departmentID)
+        public Department GetDepartmentByID(int departmentId)
         {
-            DepartmentObj dept = new DepartmentObj();
+            Department dept = new Department();
             string sql = "SELECT DP.*, STF.FirstName, STF.LastName FROM Department AS DP LEFT JOIN Staff AS STF ON DP.LeaderStaffId = STF.ID WHERE DP.ID = @ID";
 
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -105,14 +105,14 @@ namespace HRM.Services
                 using (SqlCommand command = new SqlCommand(sql, conn))
                 {
                     conn.Open();
-                    command.Parameters.Add("@ID", SqlDbType.Int).Value = departmentID;
+                    command.Parameters.Add("@ID", SqlDbType.Int).Value = departmentId;
                     var reader = command.ExecuteReader();
 
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
-                            dept.Id = DBUtils.GetInt(reader, "ID");
+                            dept.Id = DBUtils.GetInt(reader, "Id");
                             dept.ParentId = DBUtils.GetInt(reader, "ParentId");
                             dept.LeaderStaffId = DBUtils.GetInt(reader, "LeaderStaffId");
                             dept.Name = DBUtils.GetString(reader, "Name");
@@ -190,9 +190,9 @@ namespace HRM.Services
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public List<DepartmentObj> SearchDepartments(string name)
+        public List<Department> SearchDepartments(string name)
         {
-            List<DepartmentObj> listDepartment = new List<DepartmentObj>();
+            List<Department> listDepartment = new List<Department>();
 
             StringBuilder strSql = new StringBuilder();
             string sql = "SELECT DP.*, STF.FirstName, STF.LastName FROM Department AS DP LEFT JOIN Staff AS STF ON DP.LeaderStaffId = STF.ID";
@@ -211,8 +211,8 @@ namespace HRM.Services
                     {
                         while (reader.Read())
                         {
-                            DepartmentObj dept = new DepartmentObj();
-                            dept.Id = DBUtils.GetInt(reader, "ID");
+                            Department dept = new Department();
+                            dept.Id = DBUtils.GetInt(reader, "Id");
                             dept.ParentId = DBUtils.GetInt(reader, "ParentId");
                             dept.LeaderStaffId = DBUtils.GetInt(reader, "LeaderStaffId");
                             dept.Name = DBUtils.GetString(reader, "Name");
@@ -253,7 +253,7 @@ namespace HRM.Services
                     cmd.Parameters.Add("@LEADERSTAFFID", SqlDbType.Int).Value = info.LeaderStaffId;
                     cmd.Parameters.Add("@UPDATEDATE", SqlDbType.DateTime).Value = DateTime.Now;
                     cmd.Parameters.Add("@UPDATEID", SqlDbType.Int).Value = info.UpdateId;
-                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = info.ID;
+                    cmd.Parameters.Add("@ID", SqlDbType.Int).Value = info.Id;
                     try
                     {
                         conn.Open();

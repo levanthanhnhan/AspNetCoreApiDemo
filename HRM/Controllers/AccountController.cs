@@ -176,37 +176,5 @@ namespace HRM.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="account"></param>
-        /// <returns></returns>
-        [HttpPost]
-        [Route("SignUp")]
-        public ActionResult SignUp([FromBody] string userName, string password)
-        {
-            AccountService accoutService = new AccountService(_config);
-            try
-            {
-                if (accoutService.FindAccountByUserName(userName) == null)
-                {
-                    Account account = new Account();
-                    account.UserName = userName;
-                    account.Password = password;
-
-                    accoutService.CreateAccount(account);
-                    return Ok(new { _statusCode = 1, _message = "Create Successfully!" });
-                }
-                else
-                {
-                    return Ok(new { _statusCode = 0, _message = "Account is available." });
-                }
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
     }
 }

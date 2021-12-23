@@ -13,11 +13,6 @@ export class AppComponent {
 
 
   constructor(private router: Router, private networking: NetworkingService, private location: Location) {
-    //var pathString = location.path();
-    //console.log('appComponent: pathString...');
-    //console.log(pathString);
-    //console.log(pathString.substring(0, 19));
-    //pathString.substring(0, 19) != ('/Account/Activation') &&
     const token = this.networking.getToken();
     if ((token === null || this.isTokenExpired(token["refreshTokenExpires"]))) {
       this.router.navigateByUrl('/Login');

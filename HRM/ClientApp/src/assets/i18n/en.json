@@ -82,8 +82,8 @@
     "ConfirmPassword": "Confirm Password",
     "BtnRegis": "Save",
     "LblCopyright": "Copyright 2021",
-    "ErrorModalTitle": "Create error",
-    "SuccessModalTitle": "Create success",
+    "ErrorModalTitle": "Error",
+    "SuccessModalTitle": "Success",
     "Message": {
       "UsernameRequired": "Username is required",
       "StaffRequired": "Choose staff",
@@ -221,7 +221,7 @@
     },
     "Message": {
       "SessionExp": "Session has expired. Please try login again!",
-      "ConfirmDel": "Do you want to delete this data ?"
+      "ConfirmDel": "Do you want to delete this data?"
     },
     "Action": {
       "Ok": "OK",
@@ -262,7 +262,10 @@
     "tipPanelSearchShow": "Click to expand the search panel",
     "tipAddDepartment": "Add Department",
     "tipEditDepartment": "Edit Department",
-    "tipDeleteDepartment": "Delete Department"
+    "tipDeleteDepartment": "Delete Department",
+    "tipRegisterRole": "Register role",
+    "tipDeleteRle": "Delete role",
+    "tipSaveRle": "Save"
   },
   "pagination": {
     "Previous": "Previous",
@@ -334,8 +337,24 @@
     "MsgError": "Delete Failed"
   },
   "SignUp": {
-    "Title": "Create account",
+    "Title": "Register account",
     "BtnSignUpLogin": "Register account",
-    "BtnCreate": "Register"
+    "BtnCreate": "Register",
+    "BtnLogin": "Back to login",
+    "MsgSuccess": "Register account success",
+    "MsgError": "Register account failed",
+    "MsgExist": "Account is availabled. Please try again other Username!"
+  },
+  "Role": {
+    "ScreenName": "Role Management",
+    "Name": "Role name",
+    "placeholderInput": "Input role name",
+    "Message": {
+      "Success": "Role(s) have been deleted successfully.",
+      "Warning1": "Please select the line you want to delete.",
+      "Error": "This role name is existed",
+      "SaveChange": "Save change successfully.",
+      "RolenameRequired": "Role name is required"
+    }
   }
 }

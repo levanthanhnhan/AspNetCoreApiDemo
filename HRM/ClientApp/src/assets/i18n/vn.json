@@ -265,7 +265,10 @@
     "tipPanelSearchHide": "Click để mở ra phần tìm kiếm",
     "tipAddDepartment": "Thêm bộ phận",
     "tipEditDepartment": "Chỉnh sửa bộ phận",
-    "tipDeleteDepartment": "Xóa bộ phận"
+    "tipDeleteDepartment": "Xóa bộ phận",
+    "tipRegisterRole": "Đăng kí",
+    "tipDeleteRle": "Xóa",
+    "tipSaveRle": "Lưu"
   },
   "pagination": {
     "Previous": "Trước",
@@ -338,6 +341,23 @@
   },
   "SignUp": {
     "Title": "Đăng kí tài khoản",
-    "BtnSignUpLogin": "Đăng kí tài khoản"
+    "BtnSignUpLogin": "Đăng kí tài khoản",
+    "BtnCreate": "Đăng kí",
+    "BtnLogin": "Trở về Đăng nhập",
+    "MsgSuccess": "Tạo tài khoản thành công",
+    "MsgError": "Tạo tài khoản thất bại",
+    "MsgExist": "Tên tài khoản đã tồn tại. Vui lòng thử lại với tên khác"
+  },
+  "Role": {
+    "ScreenName": "Quản lý vai trò",
+    "Name": "Tên vai trò",
+    "placeholderInput": "Nhập tên vai trò",
+    "Message": {
+      "Success": " vai trò đã được xóa thành công.",
+      "Warning1": "Làm ơn chọn vai trò bạn muốn xóa.",
+      "Error": "Tên vai trò này đã tồn tại",
+      "SaveChange": "Lưu thay đổi thành công.",
+      "RolenameRequired": "Tên vai trò không được để trống."
+    }
   }
 }

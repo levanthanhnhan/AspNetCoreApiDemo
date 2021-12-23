@@ -6,7 +6,7 @@
             [isShowStaffContainer]="true"
             ></app-search>
 
-<div class="clearfix" [hidden]="!displayControl">
+<div class="clearfix">
   <div class="float-right mg-20">
     <ng-template #tipRegister><b>{{'Tooltip.tipRegister' | translate}}</b></ng-template>
     <a class="ml-10" routerLink="/Staff/Register" routerLinkActive="router-link-active"><img src="../assets/images/add.png" width="40" height="40" [ngbTooltip]="tipRegister" /></a>
@@ -61,7 +61,7 @@
         <td>{{relationStaff.departmentName}}</td>
         <td>{{relationStaff.positionName}}</td>
         <td>
-          <div [hidden]="!displayControl" class="float-left">
+          <div class="float-left">
             <ng-template #tipEdit><b>{{'Tooltip.tipEdit' | translate}}</b></ng-template>
             <a (click)="editBtn()" class="mr-10" [routerLink]="['/Staff/', relationStaff.id, 'Edit']"><img src="../assets/images/edit.png" width="30" height="30" [ngbTooltip]="tipEdit" /></a>
           </div>

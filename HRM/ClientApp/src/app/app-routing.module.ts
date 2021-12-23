@@ -17,6 +17,7 @@ import { AccountListComponent } from './modules/account/pages/list/account-list.
 import { AccountComponent } from './modules/account/pages/account/account.component';
 import { AccountEditComponent } from './modules/account/pages/edit/account-edit.component';
 import { SignUpComponent } from './modules/signup/signup.component';
+import { RoleComponent } from './modules/role/role.component';
 
 
 const routes: Routes = [
@@ -94,6 +95,10 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: 'Role',
+        component: RoleComponent,
+      }
     ]
   },
 ];

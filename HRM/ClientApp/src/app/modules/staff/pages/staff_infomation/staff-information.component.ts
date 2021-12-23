@@ -16,7 +16,6 @@ export class StaffInformationComponent implements OnInit, AfterViewInit {
   loginId: any;
   staffId: string;
   isShowInfomation: boolean;
-  displayControl: boolean = false;
 
   constructor(
     private _location: Location,
@@ -25,11 +24,6 @@ export class StaffInformationComponent implements OnInit, AfterViewInit {
     private _route: ActivatedRoute,
     private _routing: Router) {
 
-      // Check control display
-      let roleId = this.networking.getAccount().roleId;
-      if (roleId == Role.GA || roleId == Role.Manager) {
-        this.displayControl = true;
-      }
   }
 
   ngAfterViewInit() {

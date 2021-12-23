@@ -43,17 +43,16 @@ import { LoadingComponent } from './modules/loading/loading.component';
 import { StaffListComponent } from './modules/staff/pages/staff-list/staff-list.component';
 import { SearchComponent } from './modules/search/search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './modules/common/material-module';
 import { DepartmentComponent } from './modules/department/pages/department/department.component';
 import { DepartmentEditComponent } from './modules/department/pages/department-edit/department-edit.component';
 import { DepartmentRegistComponent } from './modules/department/pages/department-regist/department-regist.component';
 import { DepartmentListComponent } from './modules/department/pages/department-list/department-list.component';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 import * as $ from 'jquery';
 import { AccountComponent } from './modules/account/pages/account/account.component';
 import { AccountListComponent } from './modules/account/pages/list/account-list.component';
 import { AccountEditComponent } from './modules/account/pages/edit/account-edit.component';
 import { SignUpComponent } from './modules/signup/signup.component';
+import { RoleComponent } from './modules/role/role.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -71,7 +70,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     NgbModule,
     DeferLoadModule,
     NgxPaginationModule,
-    MaterialModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -88,8 +86,6 @@ export function HttpLoaderFactory(http: HttpClient) {
       tertiaryColour: '#ffffff'
     }),
     BrowserAnimationsModule,
-    //NoopAnimationsModule
-    DragDropModule,
     NgSelectModule
   ],
 
@@ -123,7 +119,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DepartmentEditComponent,
     DepartmentRegistComponent,
     DepartmentListComponent,
-    SignUpComponent
+    SignUpComponent,
+    RoleComponent
   ],
   entryComponents: [
     ModalErrorComponent,

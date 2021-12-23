@@ -34,7 +34,7 @@ namespace HRM.Controllers
         /// <returns></returns>
         [HttpGet]
         [Authorize]
-        public List<DepartmentObj> GetDepartments()
+        public List<Department> GetDepartments()
         {
             var service = new DepartmentService(_config);
             return service.GetAllDepartment();
@@ -47,7 +47,7 @@ namespace HRM.Controllers
         /// <returns></returns>
         [HttpGet("{id}")]
         [Authorize]
-        public DepartmentObj GetDepartmentByID(int id)
+        public Department GetDepartmentByID(int id)
         {
             DepartmentService service = new DepartmentService(_config);
             return service.GetDepartmentByID(id);
@@ -138,7 +138,7 @@ namespace HRM.Controllers
         [HttpPost]
         [Authorize]
         [Route("Search")]
-        public List<DepartmentObj> SearchDepartment([FromBody] DepartmentSearch search)
+        public List<Department> SearchDepartment([FromBody] DepartmentSearch search)
         {
             DepartmentService service = new DepartmentService(_config);
             return service.SearchDepartments(search.DepartmentName);

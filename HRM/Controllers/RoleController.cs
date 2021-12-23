@@ -92,12 +92,18 @@ namespace HRM.Controllers
                 return BadRequest();
             }
         }
-    }
 
-    public class RoleRegister
-    {
-        public int RoleId { get; set; }
-        public string RoleName { get; set; }
-        public ArrayList ListAccessChecked { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Authorize]
+        [Route("GetAccesssByRoleId")]
+        public List<Access> GetAccesssByRoleId([FromBody] int roleId)
+        {
+            var roleAccess = new RoleService(_config);
+            return roleAccess.GetAccesssByRoleId(roleId);
+        }
     }
 }

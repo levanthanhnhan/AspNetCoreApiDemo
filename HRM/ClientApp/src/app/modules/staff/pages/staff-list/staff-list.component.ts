@@ -6,8 +6,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { NetworkingService } from '../../../../common/services/networking.service';
 import { CookieService } from 'ngx-cookie-service';
 import { ModalService } from '../../../../common/services/modal.service';
-import { Router } from '@angular/router';
-import { Role } from '../../../../common/constants/constants';
 
 @Component({
   selector: 'app-staff-list',
@@ -32,7 +30,6 @@ export class StaffListComponent implements OnInit, OnDestroy {
   satffIdList: any;
   detailFlag: boolean;
   account: any;
-  displayControl: boolean;
 
   constructor(
     private translate: TranslateService,
@@ -42,12 +39,6 @@ export class StaffListComponent implements OnInit, OnDestroy {
     private modalService: ModalService) {
       this.masterSelected = false;
       this.account = this.networkSevice.getAccount();
-
-      // Check control display
-      let roleId = this.networkSevice.getAccount().roleId;
-      if (roleId == Role.GA || roleId == Role.Manager) {
-        this.displayControl = true;
-      }
   }
 
   ngOnInit(): void {

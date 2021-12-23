@@ -68,3 +68,7 @@
   margin-left: .1rem;
   margin-right: .1rem;
 }
+
+.mr-auto, .mx-auto {
+  margin-right: 10px !important;
+}

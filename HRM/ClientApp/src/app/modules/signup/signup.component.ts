@@ -43,10 +43,10 @@ export class SignUpComponent implements OnInit {
       return;
     }
 
-    let reqObj = {
-      userName: this.regisForm.get("username").value,
-      password: this.regisForm.get("password").value
-    }
+    let reqObj = new AccountModel();
+    reqObj.username = this.regisForm.get("username").value;
+    reqObj.password = this.regisForm.get("password").value;
+    reqObj.email = reqObj.username + "@company.com";
 
     this.getResRegister(reqObj);
   }
@@ -57,16 +57,17 @@ export class SignUpComponent implements OnInit {
       headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })
     };
 
-    this.http.post<any>(this._baseUrl + "api/SignUp", JSON.stringify(reqObj.userName), httpOptions).subscribe(res => {
-      self.router.navigateByUrl('/Login');
+    this.http.post<any>(this._baseUrl + "api/SignUp", JSON.stringify(reqObj), httpOptions).subscribe(res => {
+      if (res._statusCode == "1") {
+        self.modalService.openModalSuccess(self.translate.instant('Register.SuccessModalTitle'), self.translate.instant('SignUp.MsgSuccess'), self.translate.instant('SignUp.BtnLogin'), ok => {
+          self.router.navigateByUrl('/Login');
+        });
+      }
+      else {
+        self.modalService.openModalError(self.translate.instant('Register.ErrorModalTitle'), self.translate.instant('SignUp.MsgExist'), "OK", ok => {
+        });
+      }
     });
-
-
-    //this.networkService.post(this._baseUrl + "api/Account/SignUp", reqModal, null, function (res) {
-    //  self.modalService.openModalSuccess(self.translate.instant('Register.SuccessModalTitle'), self.translate.instant('Register.Message.CreateSuccess'), 'OK', ok => {
-    //    self.router.navigateByUrl('/Login');
-    //  });
-    //});
   }
 
   onback() {

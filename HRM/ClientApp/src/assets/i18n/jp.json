@@ -264,7 +264,10 @@
     "tipPanelSearchShow": "クリックして検索パネルを展開します",
     "tipAddDepartment": "部門を追加",
     "tipEditDepartment": "部門を編集",
-    "tipDeleteDepartment": "部門を削除"
+    "tipDeleteDepartment": "部門を削除",
+    "tipRegisterRole": "ロールの登録",
+    "tipDeleteRle": "ロールの削除",
+    "tipSaveRle": "保存"
   },
   "pagination": {
     "Previous": "前",
@@ -337,6 +340,23 @@
   },
   "SignUp": {
     "Title": "アカウントを作成する ",
-    "BtnSignUpLogin": "アカウントを作成する"
+    "BtnSignUpLogin": "アカウントを作成する",
+    "BtnCreate": "登録",
+    "BtnLogin": "ログインに戻る",
+    "MsgSuccess": "アカウントの成功を登録",
+    "MsgError": "アカウントの登録に失敗しました",
+    "MsgExist": "ユーザー名が存在します。 他のユーザー名を再試行してください"
+  },
+  "Role": {
+    "ScreenName": "役割管理",
+    "Name": "ロール名",
+    "placeholderInput": "ロール・プレイング",
+    "Message": {
+      "Success": " ロールが正常に削除されました.",
+      "Warning1": "削除したい行を選択してください.",
+      "Error": "この役割名は存在します",
+      "SaveChange": "変更を保存しました.",
+      "RolenameRequired": "ロール名は必須です"
+    }
   }
 }

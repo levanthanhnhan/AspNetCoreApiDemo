@@ -4,18 +4,9 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item" [hidden]="!displayNav.Dashboard">
-          <a class="nav-link" href="#" [routerLink]="['/Dashboard']">{{'Header.Dashboard' | translate}}</a>
-        </li>
-        <li class="nav-item" [hidden]="!displayNav.Staff">
-          <a class="nav-link" href="#" [routerLink]="['/Staff/List']">{{'Header.Staff' | translate}}</a>
-        </li>
-        <li class="nav-item" [hidden]="!displayNav.Department">
-          <a class="nav-link" href="#" [routerLink]="['/Department/List']">{{'Header.Department' | translate}}</a>
-        </li>
-        <li class="nav-item" [hidden]="!displayNav.Account">
-          <a class="nav-link" href="#" [routerLink]="['/Account/List']">{{'Header.Account.Register' | translate}}</a>
+      <ul class="navbar-nav mr-auto" *ngFor="let navItem of listAccessByRole">
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="[navItem.routerLink]">{{navItem.nameTrans | translate}}</a>
         </li>
       </ul>
 

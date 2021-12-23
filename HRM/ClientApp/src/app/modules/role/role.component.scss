@@ -1,0 +1,40 @@
+.mbt-20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.role-name {
+  border: none;
+  font-weight: bold;
+  border-radius: 2.5px;
+}
+
+.role-name:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.role-name-error {
+  border: solid 0.1em #fd0f0f !important;
+  border-color: #fd0f0f !important;
+}
+
+.role-name-error:focus {
+  border-color: #fd0f0f !important;
+  box-shadow: 0 0 0 0.1rem rgba(249, 0, 0, 0.65) !important;
+}
+
+.role-name:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.fixed-table-toolbar {
+    float: right;
+}

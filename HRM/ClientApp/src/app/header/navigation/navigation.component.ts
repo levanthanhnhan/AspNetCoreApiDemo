@@ -5,7 +5,7 @@ import { NetworkingService } from '../../common/services/networking.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ChangePasswordComponent } from '../../modules/change-password/change-password.component';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Role } from '../../common/constants/constants';
+import { NavigationModel } from './navigation-model';
 
 @Component({
   selector: 'app-nav',
@@ -15,13 +15,11 @@ import { Role } from '../../common/constants/constants';
 
 export class NavigationComponent {
   account: any;
+  listAccessByRole: NavigationModel[] = [];
 
-  displayNav = {
-    Dashboard: true,
-    Staff: false,
-    Department: false,
-    Account: false
-  }
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })
+  };
 
   constructor(private router: Router,
               private networking: NetworkingService,
@@ -30,7 +28,23 @@ export class NavigationComponent {
               @Inject('BASE_URL') private baseUrl: string)
   {
     this.account = this.networking.getAccount();
-    this.isVisibility(this.account);
+  }
+
+  ngOnInit() {
+    const self = this;
+
+    this.networking.post(this.baseUrl + "api/Role/GetAccesssByRoleId", this.account.roleId, null, function (res) {
+      self.listAccessByRole = res;
+
+      if (self.listAccessByRole.length == 0) {
+        let displayEmptyNav = new NavigationModel();
+        displayEmptyNav.name = '/Dashboard';
+        displayEmptyNav.routerLink = '/Dashboard';
+        displayEmptyNav.nameTrans = 'Header.Dashboard';
+
+        self.listAccessByRole.push(displayEmptyNav);
+      }
+    });
   }
 
   showProfile() {
@@ -38,13 +52,9 @@ export class NavigationComponent {
   }
 
   logout() {
-    const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8' })
-    };
-
     const self = this;
 
-    this.http.post<any>(this.baseUrl + "api/Logout", JSON.stringify(this.account.userName), httpOptions).subscribe(res => {
+    this.http.post<any>(this.baseUrl + "api/Logout", JSON.stringify(this.account.userName), this.httpOptions).subscribe(res => {
       self.networking.deleteCookies();
       self.router.navigateByUrl("Login");
     });
@@ -55,51 +65,5 @@ export class NavigationComponent {
       keyboard: false,
       backdrop: 'static'
     });
-  }
-
-  isVisibility(account: any) {
-    let roleId = account.roleId;
-
-    switch (roleId) {
-      case Role.GA: {
-        this.displayNav = {
-          Dashboard: true,
-          Staff: true,
-          Department: false,
-          Account: false
-        }
-        break;
-      }
-
-      case Role.Manager: {
-        this.displayNav = {
-          Dashboard: true,
-          Staff: true,
-          Department: true,
-          Account: true
-        }
-        break;
-      }
-
-      case Role.Leader: {
-        this.displayNav = {
-          Dashboard: true,
-          Staff: true,
-          Department: false,
-          Account: false
-        }
-        break;
-      }
-
-      case Role.Member: {
-        this.displayNav = {
-          Dashboard: true,
-          Staff: false,
-          Department: false,
-          Account: false
-        }
-        break;
-      }
-    } 
   }
 }

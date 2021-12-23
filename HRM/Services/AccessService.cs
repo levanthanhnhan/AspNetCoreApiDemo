@@ -17,10 +17,6 @@ namespace HRM.Services
             _connectionString = config.GetConnectionString("ConnectionString");
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
         public List<Access> GetAccesss()
         {
             List<Access> listAccess = new List<Access>();
@@ -41,8 +37,10 @@ namespace HRM.Services
                     while (reader.Read())
                     {
                         Access access = new Access();
-                        access.Id = DBUtils.GetInt(reader, "ID");
+                        access.Id = DBUtils.GetInt(reader, "Id");
                         access.Name = DBUtils.GetString(reader, "Name");
+                        access.RouterLink = DBUtils.GetString(reader, "RouterLink");
+                        access.NameTrans = DBUtils.GetString(reader, "NameTrans");
 
                         listAccess.Add(access);
                     }

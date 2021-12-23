@@ -108,5 +108,53 @@ namespace HRM.Services
             return listRoleAccess;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<Access> GetAccesssByRoleId(int roleId)
+        {
+            List<Access> list = new List<Access>();
+
+            SqlConnection conn = new SqlConnection(_connectionString);
+            conn.Open();
+
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = conn;
+            sqlCmd.CommandText = "SELECT Access.* FROM Access INNER JOIN RoleAccess ON Access.Id = RoleAccess.AccessId WHERE RoleAccess.RoleId = @RoleId";
+            sqlCmd.Parameters.Add("@RoleId", SqlDbType.Int).Value = roleId;
+
+            try
+            {
+                SqlDataReader reader = sqlCmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Access access = new Access();
+                        access.Id = DBUtils.GetInt(reader, "Id");
+                        access.Name = DBUtils.GetString(reader, "Name");
+                        access.RouterLink = DBUtils.GetString(reader, "RouterLink");
+                        access.NameTrans = DBUtils.GetString(reader, "NameTrans");
+
+                        list.Add(access);
+                    }
+                }
+
+                reader.Close();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            return list;
+        }
+
     }
 }

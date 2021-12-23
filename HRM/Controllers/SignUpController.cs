@@ -25,18 +25,14 @@ namespace HRM.Controllers
         /// <param name="userName"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult SignUp([FromBody] string userName)
+        public ActionResult SignUp([FromBody] Account account)
         {
             AccountService accoutService = new AccountService(_config);
             try
             {
-                if (accoutService.FindAccountByUserName(userName) == null)
+                if (accoutService.FindAccountByUserName(account.UserName) == null)
                 {
-                    Account account = new Account();
-                    account.UserName = userName;
-                    account.Password = userName;
-
-                    accoutService.CreateAccount(account);
+                    accoutService.SignUp(account);
                     return Ok(new { _statusCode = 1, _message = "Create Successfully!" });
                 }
                 else

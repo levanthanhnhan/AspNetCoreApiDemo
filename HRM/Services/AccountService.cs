@@ -261,5 +261,52 @@ namespace HRM.Services
             }
             return result;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newAccount"></param>
+        public void SignUp(Account newAccount)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("INSERT INTO Account ");
+            strSql.Append(" (");
+            strSql.Append("       UserName ");
+            strSql.Append("     , Password ");
+            strSql.Append(" ) VALUES ");
+            strSql.Append(" (");
+            strSql.Append("       @USERNAME ");
+            strSql.Append("     , @PASSWORD ");
+            strSql.Append(" )");
+
+            using (SqlConnection conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+                SqlCommand updateCommand = conn.CreateCommand();
+                SqlTransaction tran;
+                tran = conn.BeginTransaction();
+                updateCommand.Connection = conn;
+                updateCommand.Transaction = tran;
+                updateCommand.CommandText = strSql.ToString();
+                try
+                {
+                    updateCommand.Parameters.Add("@USERNAME", SqlDbType.NVarChar).Value = newAccount.UserName;
+                    updateCommand.Parameters.Add("@PASSWORD", SqlDbType.NVarChar).Value = DBUtils.EncryptPassword(newAccount.Password);
+                    updateCommand.Parameters.Add("@CREATEDATE", SqlDbType.DateTime).Value = DateTime.Now;
+                    updateCommand.Parameters.Add("@UPDATEDATE", SqlDbType.DateTime).Value = DateTime.Now;
+                    updateCommand.ExecuteNonQuery();
+                    tran.Commit();
+                }
+                catch (SqlException Ex)
+                {
+                    tran.Rollback();
+                    throw Ex;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

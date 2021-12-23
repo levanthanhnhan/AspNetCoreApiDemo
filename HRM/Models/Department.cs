@@ -7,7 +7,7 @@ namespace HRM.Models
 {
     public class Department
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public int ParentId { get; set; }
         public string Name { get; set; }
         public int LeaderStaffId { get; set; }
@@ -15,5 +15,6 @@ namespace HRM.Models
         public int CreateId { get; set; }
         public DateTime UpdateDate { get; set; }
         public int UpdateId { get; set; }
+        public string LeaderName { get; set; }
     }
 }
